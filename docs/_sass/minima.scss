@@ -1,0 +1,141 @@
+@charset "utf-8";
+
+// Define defaults for each variable.
+
+$base-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$base-font-size:   16px !default;
+$base-font-weight: 400 !default;
+$small-font-size:  $base-font-size * 0.875 !default;
+$base-line-height: 1.5 !default;
+$nav-font-size: $base-font-size * 1.2 !default;
+$nav-font-weight: 700 !default;
+
+
+$spacing-unit:     30px !default;
+
+$text-color:       #111 !default;
+$background-color: #fdfdfd !default;
+$brand-color:      #2a7ae2 !default;
+$brand-color-secondary:      #04a334 !default;
+$lightness: 0.5 !default;
+$grey-color:       #828282 !default;
+$grey-color-light: lighten($grey-color, 40%) !default;
+$grey-color-dark:  darken($grey-color, 25%) !default;
+
+$topbar-dropdown-bg: #fdfdfd !default;
+$topbar-link-color: #2a7ae2 !default;
+$table-text-align: left !default;
+
+// Width of the content area
+$content-width:    100% !default;
+
+$on-palm:          600px !default;
+$on-laptop:        1024px !default;
+
+$topbar-transition-speed: 300ms !default;
+
+$topbar-divider-border-top: solid 0px scale-color($brand-color, $lightness: -50%);
+// Use media queries like this:
+// @include media-query($on-palm) {
+//   .wrapper {
+//     padding-right: $spacing-unit / 2;
+//     padding-left: $spacing-unit / 2;
+//   }
+// }
+@mixin media-query($device) {
+  @media screen and (max-width: $device) {
+    @content;
+  }
+}
+
+@mixin for-phone-only {
+  @media (max-width: 599px) { @content; }
+}
+@mixin for-tablet-portrait-up {
+  @media (min-width: 600px) { @content; }
+}
+@mixin for-tablet-landscape-up {
+  @media (min-width: 900px) { @content; }
+}
+@mixin for-desktop-up {
+  @media (min-width: 1200px) { @content; }
+}
+@mixin for-big-desktop-up {
+  @media (min-width: 1800px) { @content; }
+}
+
+@mixin relative-font-size($ratio) {
+  font-size: $base-font-size * $ratio;
+}
+
+// @mixins
+//
+// We use this to add transitions to elements
+// $property - Default: all, Options: http://www.w3.org/TR/css3-transitions/#animatable-properties
+// $speed - Default: 300ms
+// $ease - Default:ease-out, Options: http://css-tricks.com/almanac/properties/t/transition-timing-function/
+@mixin single-transition($property:all, $speed:300ms, $ease:ease-out) {
+  transition: $property $speed $ease;
+}
+
+
+// @mixins
+//
+// We use this to create the icon with three lines aka the hamburger icon, the menu-icon or the navicon
+// $width - Width of hamburger icon in rem
+// $left - If false, icon will be centered horizontally || explicitly set value in rem
+// $top - If false, icon will be centered vertically || explicitly set value in rem
+// $thickness - thickness of lines in hamburger icon, set value in px
+// $gap - spacing between the lines in hamburger icon, set value in px
+// $color - icon color
+// $hover-color - icon color during hover
+// $offcanvas - Set to true of @include in offcanvas
+@mixin hamburger($width, $left, $top, $thickness, $gap, $color, $hover-color, $offcanvas) {
+  span::after {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 0;
+
+    @if $offcanvas {
+      @if $top {
+        top: $top;
+      }
+      @else {
+        top: 50%;
+        margin-top: (-$width/2);
+      }
+      @if $left {
+        left: $left;
+      }
+      @else {
+        left: ($tabbar-menu-icon-width - $width)/2;
+      }
+    }
+    @else {
+      top: 50%;
+      margin-top: -($width/2);
+      #{$opposite-direction}: $topbar-link-padding;
+    }
+
+    box-shadow:
+      0 0 0 $thickness $color,
+      0 $gap + $thickness 0 $thickness $color,
+      0 (2 * $gap + 2*$thickness) 0 $thickness $color;
+    width: $width;
+  }
+  span:hover:after {
+    box-shadow:
+      0 0 0 $thickness $hover-color,
+      0 $gap + $thickness 0 $thickness $hover-color,
+      0 (2 * $gap + 2*$thickness) 0 $thickness $hover-color;
+  }
+}
+
+
+// Import partials.
+@import
+  "minima/base",
+  "minima/layout",
+  "minima/syntax-highlighting"
+;

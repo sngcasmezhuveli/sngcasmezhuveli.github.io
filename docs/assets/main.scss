@@ -1,0 +1,37 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@import "minima";
+
+/**
+* home css
+*/
+.head-carousel {
+    background-image: url("/assets/college2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: calc(100vh - 64px);
+    margin: 0 $spacing-unit * -1 0 $spacing-unit * -1 ;
+  }
+@keyframes marquee{
+    0% {transform: translateX(100%)}
+    100% {transform: translateX(-100%)}
+  }
+  .marquee {
+    animation-name: marquee;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    &:hover {
+        animation-play-state: paused;
+      }
+  }
+  .marquee-strip {
+    background-color: $brand-color-secondary;
+    padding: 2px 8px 2px 8px;
+    color: white;
+  overflow-x: hidden;
+  margin: 0 $spacing-unit * -1 0 $spacing-unit * -1 ;
+  }

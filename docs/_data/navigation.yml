@@ -1,0 +1,16 @@
+- title: Home
+  url: "/"
+  side: right
+
+- title: "Academics"
+  url: "/academics/"
+  side: right
+  dropdown:
+  - title: "Programmes Offered"
+    url: "/academics/programmes_offered"
+  - title: "Fee Structure"
+    url: "/academics/fee_structure/"
+
+- title: Contact
+  url: "/contact/"
+  side: right

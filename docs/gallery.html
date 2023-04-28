@@ -1,0 +1,11 @@
+---
+permalink: /gallery
+title: Gallery
+layout: page
+type: main
+---
+{% for image in site.static_files %}
+    {% if image.path contains 'gallery/uploads' %}
+        <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
+    {% endif %}
+{% endfor %}

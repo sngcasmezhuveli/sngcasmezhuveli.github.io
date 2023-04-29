@@ -24,7 +24,7 @@ function hideNav() {
 function setNav() {
     var top = (window.pageYOffset || document.scrollTop) - (document.clientTop || 0);
 
-    if (top > 1) {
+    if (top > 5) {
         $('site-title').className = "site-title-collapsed"
        $('site-header-background').style.opacity = "1.0"
     }

@@ -25,12 +25,14 @@ function setNav() {
     var top = (window.pageYOffset || document.scrollTop) - (document.clientTop || 0);
 
     if (top > 5) {
-        $('site-title').className = "site-title-collapsed"
-       $('site-header-background').style.opacity = "1.0"
+        //when scrolling starts
+        $('site-title').className = "site-title site-title-collapsed"
+       $('site-header-background').className = "site-header-background sh-collapsed"
     }
     else {
-        $('site-title').className = "site-title-expanded"
-        $('site-header-background').style.opacity = "0.0"
+        //User has scrolled back to the top
+        $('site-title').className = "site-title site-title-expanded"
+        $('site-header-background').className = "site-header-background sh-expanded"
 
     }
 }

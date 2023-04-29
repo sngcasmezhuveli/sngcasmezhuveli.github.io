@@ -255,6 +255,8 @@ table td {
 }
 .site-header .wrapper .top-nav .right .has-dropdown .dropdown {
   margin-top: 27.975px;
+  font-size: 16px;
+  width: 180px;
   background-color: #2a7ae2;
   padding: 0;
   list-style-position: inside;
@@ -263,11 +265,35 @@ table td {
   display: none;
   position: absolute;
 }
+.site-header .wrapper .top-nav .right .has-dropdown .dropdown li {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
 .site-header .wrapper .top-nav .right .has-dropdown .dropdown li a {
   color: #fdfdfd;
 }
+.site-header .wrapper .top-nav .right .has-dropdown .dropdown li:hover {
+  background-color: rgba(255, 255, 255, 0.3098039216);
+}
 .site-header .wrapper .top-nav .right .has-dropdown:hover .dropdown {
   display: block;
+}
+
+.side-nav {
+  background-color: #2a7ae2;
+  color: white;
+  width: 100%;
+}
+
+@media (max-width: 599px) {
+  .nav-button {
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    position: absolute;
+  }
 }
 
 .site-header-background {

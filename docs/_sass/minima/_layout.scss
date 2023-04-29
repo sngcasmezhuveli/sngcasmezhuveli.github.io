@@ -21,29 +21,36 @@
         display: block;
         top: 0%;
         right: 0px;
-        
+
         font-size: $nav-font-size;
         margin: 0px $spacing-unit 0px $spacing-unit;
         @include for-phone-only {
           display: none;
         }
         height: 100%;
-        >li {
+        > li {
           -ms-transform: translateY(-50%);
-        transform: translateY(-50%);
+          transform: translateY(-50%);
           display: inline-block;
           margin-top: auto;
           height: 100%;
           margin-bottom: auto;
-          
         }
         .has-dropdown {
           .dropdown {
             margin-top: $spacing-unit * 1.865 / 2;
-            li{
-              
-              a{
-            color: $background-color;
+            font-size: $base-font-size;
+
+            width: 180px;
+            li {
+              width: 100%;
+              padding: 8px;
+              box-sizing: border-box;
+              a {
+                color: $background-color;
+              }
+              &:hover {
+                background-color: #ffffff4f;
               }
             }
             background-color: $brand-color;
@@ -65,23 +72,40 @@
   }
 }
 
-.site-header-background{
+.side-nav {
+ // display: none;
+  background-color: $brand-color;
+  color: #ffffffff;
+  width: 100%;
+}
+
+.nav-button {
+  @include for-phone-only {
+    right: $spacing-unit;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    position: absolute;
+  }
+}
+
+.site-header-background {
   background-color: $background-color;
   height: $spacing-unit * 1.865 * 2;
   position: absolute;
   width: 100%;
   top: 0%;
   left: 0%;
-  opacity: 0;  
+  opacity: 0;
   transform-origin: top left;
   transition: opacity 1s, transform 1s;
 }
 
-.sh-collapsed{
+.sh-collapsed {
   transform: scaleY(0.5);
   opacity: 1;
 }
-.sh-expanded{
+.sh-expanded {
   transform: scaleY(1);
   opacity: 0;
 }
@@ -106,21 +130,17 @@
       width: auto;
     }
   }
-
-
 }
 .site-title-expanded {
   margin: inherit -$spacing-unit 0 0;
 
   width: fit-content;
-  
 }
 
 .site-title-collapsed {
   margin-bottom: 0;
   float: left;
   transform: scale(0.5);
- 
 }
 /*.site-title::before {
   content: url("/assets/logo.png");

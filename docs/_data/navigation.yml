@@ -11,6 +11,10 @@
   - title: "Fee Structure"
     url: "/academics/fee_structure/"
 
+- title: About Us
+  url: "/about/"
+  side: right
+  
 - title: Contact
   url: "/contact/"
   side: right

@@ -238,7 +238,6 @@ table td {
   right: 0px;
   font-size: 19.2px;
   margin: 0px 30px 0px 30px;
-  border: 1px solid red;
   height: 100%;
 }
 @media (max-width: 599px) {

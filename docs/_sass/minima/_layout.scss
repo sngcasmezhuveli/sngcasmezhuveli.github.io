@@ -73,13 +73,53 @@
 }
 
 .side-nav {
- // display: none;
   background-color: $brand-color;
   color: #ffffffff;
   width: 100%;
-}
+  display: block;
+  position: absolute;
+  margin-top: $spacing-unit * 1.865;
+  margin-left: -$spacing-unit;
+  transition: transform 1s;
+  .has-dropdown {
+    .dropdown {
+      margin-top: $spacing-unit * 1.865 / 2;
+      font-size: $base-font-size;
 
+     
+      li {
+        padding: 8px;
+        box-sizing: border-box;
+        a {
+          color: $background-color;
+        }
+        &:hover {
+          background-color: #ffffff4f;
+        }
+      }
+      background-color: $brand-color;
+      padding: 0;
+     
+      margin-left: 0px;
+      padding: 8px;
+      display: none;
+    }
+    &:hover {
+      .dropdown {
+        display: inline;
+      }
+    }
+  }
+
+}
+.sn-collapse {
+  transform: translateY(-200%);
+}
+.sn-expand{
+  transform: translateY(0%);
+}
 .nav-button {
+  display: none;
   @include for-phone-only {
     right: $spacing-unit;
     top: 50%;
@@ -99,6 +139,9 @@
   opacity: 0;
   transform-origin: top left;
   transition: opacity 1s, transform 1s;
+  @include for-phone-only {
+    opacity: 1;
+  }
 }
 
 .sh-collapsed {
@@ -108,6 +151,10 @@
 .sh-expanded {
   transform: scaleY(1);
   opacity: 0;
+  @include for-phone-only {
+    opacity: 1;
+    transform: scaleY(0.5);
+  }
 }
 .site-title {
   @include relative-font-size(1.625);
@@ -117,7 +164,9 @@
   line-height: $base-line-height * $base-font-size * 2.25;
   letter-spacing: -1px;
   margin: 0 0 0 (-$spacing-unit);
-
+  @include for-phone-only{
+    margin: 0;
+  }
   transform-origin: top left;
   transition: transform 1s;
   &,
@@ -133,8 +182,11 @@
 }
 .site-title-expanded {
   margin: inherit -$spacing-unit 0 0;
-
   width: fit-content;
+  @include for-phone-only{
+    float: left;
+    transform: scale(0.5);
+  }
 }
 
 .site-title-collapsed {

@@ -1,4 +1,4 @@
-var $ = document.getElementById.bind(document)
+var $ = document.getElementById.bind(document);
 /*
 function showNav() {
     $('side-nav').style.zIndex = "7"
@@ -22,20 +22,31 @@ function hideNav() {
 }
 */
 function setNav() {
-    var top = (window.pageYOffset || document.scrollTop) - (document.clientTop || 0);
+  var top =
+    (window.pageYOffset || document.scrollTop) - (document.clientTop || 0);
 
-    if (top > 5) {
-        //when scrolling starts
-        $('site-title').className = "site-title site-title-collapsed"
-       $('site-header-background').className = "site-header-background sh-collapsed"
-    }
-    else {
-        //User has scrolled back to the top
-        $('site-title').className = "site-title site-title-expanded"
-        $('site-header-background').className = "site-header-background sh-expanded"
-
-    }
+  if (top > 5) {
+    //when scrolling starts
+    $("site-title").className = "site-title site-title-collapsed";
+    $("site-header-background").className =
+      "site-header-background sh-collapsed";
+  } else {
+    //User has scrolled back to the top
+    $("site-title").className = "site-title site-title-expanded";
+    $("site-header-background").className =
+      "site-header-background sh-expanded";
+  }
 }
 document.addEventListener("scroll", function () {
-    setNav();
-})
+  setNav();
+});
+document.addEventListener("DOMContentLoaded", function () {
+  $("nav-button").addEventListener("click", function () {
+    let sideNav = $("side-nav");
+    if (sideNav.className == "side-nav sn-expand") {
+      sideNav.className = "side-nav sn-collapse";
+    } else {
+      sideNav.className = "side-nav sn-expand";
+    }
+  });
+});

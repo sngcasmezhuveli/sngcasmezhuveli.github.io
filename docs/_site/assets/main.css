@@ -217,13 +217,14 @@ table td {
  * Site header
  */
 .site-header {
-  border-top: 5px solid #424242;
-  border-bottom: 1px solid #e8e8e8;
-  min-height: 55.95px;
+  height: 55.95px;
   width: 100%;
   position: fixed;
-  background-color: #fdfdfd;
   z-index: 5555;
+}
+.site-header .wrapper {
+  text-align: left;
+  height: 55.95px;
 }
 .site-header .wrapper .top-nav {
   width: 100%;
@@ -233,45 +234,91 @@ table td {
   list-style-position: inside;
   position: absolute;
   display: block;
-  top: 50%;
+  top: 0%;
   right: 0px;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
   font-size: 19.2px;
   margin: 0px 30px 0px 30px;
+  border: 1px solid red;
+  height: 100%;
 }
 @media (max-width: 599px) {
   .site-header .wrapper .top-nav .right {
     display: none;
   }
 }
-.site-header .wrapper .top-nav .right li {
+.site-header .wrapper .top-nav .right > li {
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
   display: inline-block;
   margin-top: auto;
+  height: 100%;
   margin-bottom: auto;
 }
 .site-header .wrapper .top-nav .right .has-dropdown .dropdown {
+  margin-top: 27.975px;
   background-color: #2a7ae2;
   padding: 0;
   list-style-position: inside;
+  margin-left: 0px;
+  padding: 8px;
   display: none;
   position: absolute;
+}
+.site-header .wrapper .top-nav .right .has-dropdown .dropdown li a {
+  color: #fdfdfd;
 }
 .site-header .wrapper .top-nav .right .has-dropdown:hover .dropdown {
   display: block;
 }
 
-.site-title {
+.site-header-background {
+  background-color: #fdfdfd;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  left: 0%;
+  transition: opacity 1s;
+}
+
+.site-title-expanded {
   font-size: 26px;
+  background-color: #fdfdfd;
+  text-align: left;
+  font-weight: 300;
+  line-height: 54px;
+  letter-spacing: -1px;
+  margin: inherit-30px 0 0;
+  width: fit-content;
+  transform-origin: top left;
+  transition: transform 1s;
+}
+.site-title-expanded, .site-title-expanded:visited {
+  color: #424242;
+}
+.site-title-expanded a img {
+  height: 111.9px;
+  width: auto;
+}
+
+.site-title-collapsed {
+  font-size: 26px;
+  background-color: #fdfdfd;
   font-weight: 300;
   line-height: 54px;
   letter-spacing: -1px;
   margin-bottom: 0;
   float: left;
-  width: 40%;
+  transform-origin: top left;
+  transform: scale(0.5);
+  transition: transform 1s;
 }
-.site-title, .site-title:visited {
+.site-title-collapsed, .site-title-collapsed:visited {
   color: #424242;
+}
+.site-title-collapsed a img {
+  height: 111.9px;
+  width: auto;
 }
 
 /*.site-title::before {
@@ -414,7 +461,6 @@ table td {
  * Page content
  */
 .page-content {
-  padding: 30px 0;
   flex: 1;
 }
 
@@ -700,8 +746,8 @@ table td {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: calc(100vh - 64px);
-  margin: 0 -30px 0 -30px;
+  height: 105vh;
+  margin: -30px -30px;
 }
 
 @keyframes marquee {

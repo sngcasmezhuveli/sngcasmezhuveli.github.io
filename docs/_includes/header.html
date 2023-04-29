@@ -1,17 +1,19 @@
 
-<header class="site-header" role="banner">
-
+<header class="site-header" id="site-header" role="banner">
+  <div class="site-header-background" id="site-header-background"></div>
   <div class="wrapper">
     {%- assign default_paths = site.pages | map: "path" -%}
     {%- assign page_paths = site.header_pages | default: default_paths -%}
-    <a class="site-title" rel="author" href="{{ "/" | relative_url }}">
+    <div id="site-title" class="site-title-expanded">
+    <a rel="author" href="{{ "/" | relative_url }}">
       <img src="/assets/logo.png" alt=" {{ site.title | escape }}">
      </a>
+    </div>
 
 
 
 
-<div class="top-nav" role="navigation">
+<div class="top-nav " role="navigation" id="top-nav">
 
      <ul class="right">
       {% for link in site.data.navigation %}

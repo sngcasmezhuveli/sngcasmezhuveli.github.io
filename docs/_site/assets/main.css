@@ -85,11 +85,11 @@ h1, h2, h3, h4, h5, h6 {
  * Links
  */
 a {
-  color: #2a7ae2;
+  color: #385396;
   text-decoration: none;
 }
 a:visited {
-  color: #1756a9;
+  color: #23345e;
 }
 a:hover {
   color: #111;
@@ -258,11 +258,14 @@ table td {
   height: 100%;
   margin-bottom: auto;
 }
+.site-header .wrapper .top-nav .right > li a {
+  color: #fdfdfd;
+}
 .site-header .wrapper .top-nav .right .has-dropdown .dropdown {
   margin-top: 27.975px;
   font-size: 16px;
   width: 180px;
-  background-color: #2a7ae2;
+  background-color: #385396;
   padding: 0;
   list-style-position: inside;
   margin-left: 0px;
@@ -286,7 +289,7 @@ table td {
 }
 
 .side-nav {
-  background-color: #2a7ae2;
+  background-color: #385396;
   color: white;
   width: 100%;
   display: block;
@@ -298,7 +301,7 @@ table td {
 .side-nav .has-dropdown .dropdown {
   margin-top: 27.975px;
   font-size: 16px;
-  background-color: #2a7ae2;
+  background-color: #385396;
   padding: 0;
   margin-left: 0px;
   padding: 8px;
@@ -348,8 +351,59 @@ table td {
   }
 }
 
+.site-header-vignette {
+  height: 167.85px;
+  position: absolute;
+  width: 100%;
+  top: 0%;
+  left: 0%;
+  background-image: linear-gradient(rgb(0, 0, 0), transparent);
+  display: block;
+  transition: opacity 100ms, transform 1s;
+}
+
+.contact-form label {
+  display: block;
+}
+.contact-form input {
+  display: block;
+  padding: 8px 30px 8px 30px;
+  margin: 0 0 30px 0;
+  width: 40%;
+}
+@media (max-width: 680px) {
+  .contact-form input {
+    width: 80%;
+  }
+}
+.contact-form input[type=submit] {
+  background-color: #385396;
+  color: #fdfdfd;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  width: fit-content;
+}
+
+.google-map {
+  width: 50%;
+}
+@media (max-width: 680px) {
+  .google-map {
+    width: 100%;
+  }
+}
+
+.sv-collapsed {
+  opacity: 0;
+}
+
+.sv-expanded {
+  opacity: 1;
+}
+
 .site-header-background {
-  background-color: #fdfdfd;
+  background-color: #385396;
   height: 111.9px;
   position: absolute;
   width: 100%;
@@ -399,6 +453,7 @@ table td {
   font-weight: 300;
   line-height: 54px;
   letter-spacing: -1px;
+  position: absolute;
   margin: 0 0 0 -30px;
   transform-origin: top left;
   transition: transform 1s;
@@ -422,7 +477,6 @@ table td {
 }
 
 .site-title-expanded {
-  margin: inherit-30px 0 0;
   width: fit-content;
 }
 @media (max-width: 680px) {
@@ -681,7 +735,21 @@ table td {
   margin-bottom: 30px;
 }
 
+.page-header-image {
+  box-sizing: border-box;
+  height: 50vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-left: -30px;
+  margin-right: -30px;
+}
+
 .post-title {
+  position: absolute;
+  bottom: 55vh;
+  margin-left: 30px;
+  font-weight: 700;
+  color: #fdfdfd;
   font-size: 42px;
   letter-spacing: -1px;
   line-height: 1;
@@ -694,6 +762,7 @@ table td {
 
 .post-content {
   margin-bottom: 30px;
+  margin-top: 30px;
 }
 .post-content h2 {
   font-size: 32px;
@@ -953,7 +1022,7 @@ table td {
 }
 
 .marquee-strip {
-  background-color: #04a334;
+  background-color: #38734a;
   padding: 2px 8px 2px 8px;
   color: white;
   overflow-x: hidden;

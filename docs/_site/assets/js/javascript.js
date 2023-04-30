@@ -28,13 +28,15 @@ function setNav() {
   if (top > 5) {
     //when scrolling starts
     $("site-title").className = "site-title site-title-collapsed";
-    $("site-header-background").className =
-      "site-header-background sh-collapsed";
+    $("site-header-background").className = "site-header-background sh-collapsed";
+    $("site-header-vignette").className = "site-header-vignette sv-collapsed";
+   
   } else {
     //User has scrolled back to the top
     $("site-title").className = "site-title site-title-expanded";
     $("site-header-background").className =
       "site-header-background sh-expanded";
+      $("site-header-vignette").className = "site-header-vignette sv-expanded";
   }
 }
 document.addEventListener("scroll", function () {

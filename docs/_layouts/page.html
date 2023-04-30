@@ -4,7 +4,9 @@ layout: default
 <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">{{ page.title | escape }}</h1>
+    <div  class="page-header-image" style="background-image: url('{{ page.image | escape}}')">
+      <h1 class="post-title">{{ page.title | upcase }}</h1>
+    </div>
   </header>
 
   <div class="post-content">

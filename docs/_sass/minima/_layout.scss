@@ -29,6 +29,9 @@
         }
         height: 100%;
         > li {
+          a{
+          color: $background-color;
+          }
           -ms-transform: translateY(-50%);
           transform: translateY(-50%);
           display: inline-block;
@@ -128,9 +131,55 @@
     position: absolute;
   }
 }
+.site-header-vignette{
+  height: $spacing-unit * 1.865 *3;
+  position: absolute;
+  width: 100%;
+  top: 0%;
+  left: 0%;
+  background-image: linear-gradient(rgb(0, 0, 0),transparent);
+  display: block;
+  transition: opacity 100ms, transform 1s;
+}
 
+.contact-form{
+  label{
+    display: block;
+  }
+  input{
+    display: block;
+    padding: 8px $spacing-unit 8px  $spacing-unit;
+    margin: 0 0 $spacing-unit 0;
+    width: 40%;
+    @include media-max(mobile){
+      width: 80%;
+    }
+    &[type="submit"] {
+      background-color: $brand-color;
+      color: $background-color;
+      outline: none;
+      border: none;
+      border-radius: 5px;
+      width: fit-content;
+    }
+  }
+}
+
+.google-map{
+  width: 50%;
+  @include media-max(mobile){
+    width: 100%;
+  }
+}
+
+.sv-collapsed{
+  opacity: 0;
+}
+.sv-expanded{
+  opacity: 1;
+}
 .site-header-background {
-  background-color: $background-color;
+  background-color: $brand-color;
   height: $spacing-unit * 1.865 * 2;
   position: absolute;
   width: 100%;
@@ -163,7 +212,7 @@
   font-weight: 300;
   line-height: $base-line-height * $base-font-size * 2.25;
   letter-spacing: -1px;
-  
+position: absolute;
   margin: 0 0 0 (-$spacing-unit);
   @include media-max(mobile, tablet){ 
     margin: 0;
@@ -182,7 +231,6 @@
   }
 }
 .site-title-expanded {
-  margin: inherit -$spacing-unit 0 0;
   width: fit-content;
   @include media-max(mobile, tablet){ 
     float: left;
@@ -401,9 +449,23 @@
  */
 .post-header {
   margin-bottom: $spacing-unit;
+  
 }
 
+.page-header-image {
+  box-sizing: border-box;
+  height: 50vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-left: -$spacing-unit;
+  margin-right: -$spacing-unit;
+}
 .post-title {
+  position: absolute;
+  bottom: 55vh;
+  margin-left: $spacing-unit;
+  font-weight: 700;
+  color: $background-color;
   @include relative-font-size(2.625);
   letter-spacing: -1px;
   line-height: 1;
@@ -415,7 +477,7 @@
 
 .post-content {
   margin-bottom: $spacing-unit;
-
+  margin-top: $spacing-unit;
   h2 {
     @include relative-font-size(2);
 

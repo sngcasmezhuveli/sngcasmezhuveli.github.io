@@ -581,6 +581,20 @@ table td {
   list-style: none;
   margin-left: 0;
 }
+.contact-list > li,
+.social-media-list > li {
+  display: table;
+}
+.contact-list > li > i,
+.social-media-list > li > i {
+  display: table-cell;
+  padding: 8px;
+  text-align: center;
+}
+.contact-list > li > span,
+.social-media-list > li > span {
+  display: table-cell;
+}
 
 .footer-col-wrapper {
   font-size: 15px;

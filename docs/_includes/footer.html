@@ -1,9 +1,9 @@
 <footer class="site-footer h-card">
-  <data class="u-url" href="{{ "/" | relative_url }}"></data>
+  <data class="u-url" href="{{ " /" | relative_url }}"></data>
 
   <div class="wrapper">
 
-   <!-- <h2 class="footer-heading">{{ site.title | escape }}</h2> -->
+    <!-- <h2 class="footer-heading">{{ site.title | escape }}</h2> -->
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
         <h3>Quick Links</h3>
@@ -20,7 +20,7 @@
           {% assign domain = site.url %}
           {% assign _baseurl = site.baseurl %}
           {% endif %}
-  
+
           <li class="quicklink"><a href="{{ link.url }}">{{ link.title }}</a></li>
           {% endfor %}
         </ul>
@@ -28,16 +28,33 @@
       <div class="footer-col footer-col-2">
         <h3>Contact Us</h3>
         <ul class="contact-list">
-          <li class="p-name">
+         <!-- <li class="p-name">
             {%- if site.author -%}
-              {{ site.author | escape }}
+            {{ site.author | escape }}
             {%- else -%}
-              {{ site.title | escape }}
+            {{ site.title | escape }}
             {%- endif -%}
-            </li>
-            {%- if site.email -%}
-            <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+          </li>-->
+          {%- if site.phone -%}
+          <li><i class="fa fa-phone"></i> <a class="u-phone" href="tel:{{ site.phone }}">{{ site.phone }}</a></li>
+          {%- endif -%}
+          {%- if site.email -%}
+          <li><i class="fa fa-envelope"></i> <a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+          {%- endif -%}
+          {%- if site.address1 -%}
+          <li>
+            <i class="fa fa-map-marker"></i>
+            <span>
+           {{ site.address1 }}
+            {%- if site.locality -%}
+            <div> {{ site.locality }}</div>
             {%- endif -%}
+            {%- if site.state -%}
+            <div>{{ site.state }},&nbsp; {%- if site.pin -%} {{ site.pin }} {%- endif -%}</div>
+            {%- endif -%}
+            </span>
+          </li>
+          {%- endif -%}
         </ul>
       </div>
 
@@ -50,5 +67,6 @@
     </div>
 
   </div>
-<div class="copyright">Copyright © 2023 Sree Narayana Guru College of Advanced Studies, Mezhuveli. All Rights Reserved</div>
+  <div class="copyright">Copyright © 2023 Sree Narayana Guru College of Advanced Studies, Mezhuveli. All Rights Reserved
+  </div>
 </footer>

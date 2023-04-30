@@ -296,7 +296,21 @@
 .social-media-list {
   list-style: none;
   margin-left: 0;
+>li{
+  display: table;
+ 
+  >i{
+    display: table-cell;
+    padding: 8px;
+    text-align: center;
+  }
+  >span{
+    
+    display:table-cell;
+  }
 }
+}
+
 
 .footer-col-wrapper {
   @include relative-font-size(0.9375);

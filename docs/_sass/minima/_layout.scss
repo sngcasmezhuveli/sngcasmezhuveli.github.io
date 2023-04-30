@@ -24,7 +24,7 @@
 
         font-size: $nav-font-size;
         margin: 0px $spacing-unit 0px $spacing-unit;
-        @include for-phone-only {
+        @include media-max(mobile, tablet){ 
           display: none;
         }
         height: 100%;
@@ -120,7 +120,7 @@
 }
 .nav-button {
   display: none;
-  @include for-phone-only {
+  @include media-max(mobile, tablet){ 
     right: $spacing-unit;
     top: 50%;
     transform: translateY(-50%);
@@ -139,7 +139,7 @@
   opacity: 0;
   transform-origin: top left;
   transition: opacity 1s, transform 1s;
-  @include for-phone-only {
+  @include media-max(mobile, tablet){ 
     opacity: 1;
   }
 }
@@ -151,7 +151,7 @@
 .sh-expanded {
   transform: scaleY(1);
   opacity: 0;
-  @include for-phone-only {
+  @include media-max(mobile, tablet){ 
     opacity: 1;
     transform: scaleY(0.5);
   }
@@ -163,8 +163,9 @@
   font-weight: 300;
   line-height: $base-line-height * $base-font-size * 2.25;
   letter-spacing: -1px;
+  
   margin: 0 0 0 (-$spacing-unit);
-  @include for-phone-only{
+  @include media-max(mobile, tablet){ 
     margin: 0;
   }
   transform-origin: top left;
@@ -183,7 +184,7 @@
 .site-title-expanded {
   margin: inherit -$spacing-unit 0 0;
   width: fit-content;
-  @include for-phone-only{
+  @include media-max(mobile, tablet){ 
     float: left;
     transform: scale(0.5);
   }
@@ -224,7 +225,7 @@
     }
   }
 
-  @include media-query($on-palm) {
+  @include media-max(mobile, tablet){ 
     position: absolute;
     top: 9px;
     right: $spacing-unit / 2;

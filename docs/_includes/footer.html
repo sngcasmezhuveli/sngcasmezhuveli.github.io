@@ -3,10 +3,30 @@
 
   <div class="wrapper">
 
-    <h2 class="footer-heading">{{ site.title | escape }}</h2>
-
+   <!-- <h2 class="footer-heading">{{ site.title | escape }}</h2> -->
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
+        <h3>Quick Links</h3>
+        <ul>
+          {% for link in site.data.quicklinks %}
+
+          {% if link.url contains 'http' %}
+          {% assign domain = '' %}
+          {% assign _baseurl = '' %}
+          {% elsif link.url == '#' %}
+          {% assign domain = '' %}
+          {% assign _baseurl = site.baseurl %}
+          {% else %}
+          {% assign domain = site.url %}
+          {% assign _baseurl = site.baseurl %}
+          {% endif %}
+  
+          <li class="quicklink"><a href="{{ link.url }}">{{ link.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="footer-col footer-col-2">
+        <h3>Contact Us</h3>
         <ul class="contact-list">
           <li class="p-name">
             {%- if site.author -%}
@@ -21,15 +41,14 @@
         </ul>
       </div>
 
-      <div class="footer-col footer-col-2">
+      <div class="footer-col footer-col-3">
+        <h3>Engage</h3>
         {%- include social.html -%}
       </div>
 
-      <div class="footer-col footer-col-3">
-        <p>{{- site.description | escape -}}</p>
-      </div>
+
     </div>
 
   </div>
-
+<div class="copyright">Copyright © 2023 Sree Narayana Guru College of Advanced Studies, Mezhuveli. All Rights Reserved</div>
 </footer>

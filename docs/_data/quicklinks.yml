@@ -1,0 +1,14 @@
+- title: Home
+  url: "/"
+
+- title: Fee Structure
+  url: "/fee_structure/"
+
+- title: Galley
+  url: "/gallery/"
+
+- title: About Us
+  url: "/about/"
+
+- title: Contact
+  url: "/contact/"

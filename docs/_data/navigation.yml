@@ -3,7 +3,7 @@
   side: right
 
 - title: "Academics"
-  url: "#"
+  url: "javascript:void(0);"
   side: right
   dropdown:
   - title: "Programmes Offered"

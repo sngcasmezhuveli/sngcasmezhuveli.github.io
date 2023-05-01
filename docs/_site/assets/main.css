@@ -1005,12 +1005,12 @@ table td {
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
+  height: 600px;
   margin: -30px -30px;
 }
 @media (max-width: 680px) {
   .head-carousel {
-    height: 60vh;
+    height: 400px;
     background-image: url("/assets/college-mob.jpg");
   }
 }

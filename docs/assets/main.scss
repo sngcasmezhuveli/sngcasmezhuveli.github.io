@@ -12,9 +12,9 @@
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    height: 600px;
     @include media-max(mobile){
-      height: 60vh;
+      height: 400px;
       background-image: url("/assets/college-mob.jpg");
     }
     margin: 0 -$spacing-unit  0 -$spacing-unit ;

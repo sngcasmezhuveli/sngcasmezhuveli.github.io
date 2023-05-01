@@ -230,14 +230,16 @@ table td {
   width: 100%;
 }
 .site-header .wrapper .top-nav .right {
-  padding-left: 0px;
+  padding-left: 30px;
+  padding-right: 30px;
   list-style-position: inside;
   position: absolute;
   display: block;
   top: 0%;
   right: 0px;
+  background-color: #385396;
   font-size: 19.2px;
-  margin: 0px 30px 0px 30px;
+  margin: 0px 0px 0px 30px;
   height: 100%;
 }
 @media (max-width: 680px) {
@@ -252,7 +254,7 @@ table td {
 }
 .site-header .wrapper .top-nav .right > li {
   -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+  transform: translateY(-40%);
   display: inline-block;
   margin-top: auto;
   height: 100%;
@@ -289,7 +291,7 @@ table td {
 }
 
 .side-nav {
-  background-color: #385396;
+  background-color: #fdfdfd;
   color: white;
   width: 100%;
   display: block;
@@ -301,7 +303,7 @@ table td {
 .side-nav .has-dropdown .dropdown {
   margin-top: 27.975px;
   font-size: 16px;
-  background-color: #385396;
+  background-color: #fdfdfd;
   padding: 0;
   margin-left: 0px;
   padding: 8px;
@@ -362,21 +364,25 @@ table td {
   transition: opacity 100ms, transform 1s;
 }
 
-.contact-form label {
-  display: block;
-}
-.contact-form input {
-  display: block;
-  padding: 8px 30px 8px 30px;
-  margin: 0 0 30px 0;
+.contact-form {
+  border: 1px soild red;
   width: 40%;
 }
 @media (max-width: 680px) {
-  .contact-form input {
+  .contact-form {
     width: 80%;
   }
 }
-.contact-form input[type=submit] {
+.contact-form label {
+  display: block;
+}
+.contact-form input, .contact-form textarea {
+  width: 90%;
+  display: block;
+  padding: 8px;
+  margin: 0 0 30px 0;
+}
+.contact-form input[type=submit], .contact-form textarea[type=submit] {
   background-color: #385396;
   color: #fdfdfd;
   outline: none;
@@ -403,7 +409,7 @@ table td {
 }
 
 .site-header-background {
-  background-color: #385396;
+  background-color: #fdfdfd;
   height: 111.9px;
   position: absolute;
   width: 100%;
@@ -995,12 +1001,18 @@ table td {
 * home css
 */
 .head-carousel {
-  background-image: url("/assets/college2.jpg");
-  background-position: center;
+  background-image: url("/assets/college.jpg");
+  background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 105vh;
+  height: 100vh;
   margin: -30px -30px;
+}
+@media (max-width: 680px) {
+  .head-carousel {
+    height: 60vh;
+    background-image: url("/assets/college-mob.jpg");
+  }
 }
 
 @keyframes marquee {

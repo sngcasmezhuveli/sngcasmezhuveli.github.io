@@ -8,11 +8,15 @@
 * home css
 */
 .head-carousel {
-    background-image: url("/assets/college2.jpg");
-    background-position: center;
+    background-image: url("/assets/college.jpg");
+    background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 105vh;
+    height: 100vh;
+    @include media-max(mobile){
+      height: 60vh;
+      background-image: url("/assets/college-mob.jpg");
+    }
     margin: 0 -$spacing-unit  0 -$spacing-unit ;
   }
 @keyframes marquee{

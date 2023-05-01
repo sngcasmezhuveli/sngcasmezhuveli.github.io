@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Sree Narayana Guru College of Advanced Studies
+title: Sree Narayanaguru College of Advanced Studies
 email: principal@sngcasmezhuveli.in
 phone: +91 8281201432
 phone-secondary: +91 8848439201

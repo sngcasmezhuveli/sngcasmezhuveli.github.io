@@ -44,11 +44,11 @@ document.addEventListener("scroll", function () {
 });
 document.addEventListener("DOMContentLoaded", function () {
   $("nav-button").addEventListener("click", function () {
-    let sideNav = $("side-nav");
-    if (sideNav.className == "side-nav sn-expand") {
-      sideNav.className = "side-nav sn-collapse";
+    let sideNav = $("right");
+    if (sideNav.className == "right sn-expand") {
+      sideNav.className = "right sn-collapse";
     } else {
-      sideNav.className = "side-nav sn-expand";
+      sideNav.className = "right sn-expand";
     }
   });
 });

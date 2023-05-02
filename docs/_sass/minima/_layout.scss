@@ -17,37 +17,49 @@
       .right {
         padding-left: $spacing-unit;
         padding-right: $spacing-unit;
-        list-style-position: inside;
-        position: absolute;
         display: block;
-        top: 0%;
-        right: 0px;
+        position: absolute;
         background-color: $brand-color;
         font-size: $nav-font-size;
-        margin: 0px 0px 0px $spacing-unit;
-        @include media-max(mobile, tablet) {
-          display: none;
+        width: 100%;
+        margin-top: $spacing-unit * 1.865;
+        margin-left: -$spacing-unit;
+        transition: transform 1s;
+
+        @include media(desktop) {
+          list-style-position: inside;
+          top: 0%;
+          right: 0px;
+          margin: 0px 0px 0px $spacing-unit;
+          height: 100%;
+          width: unset;
+          z-index: 9999;
         }
-        height: 100%;
         > li {
           a {
             color: $background-color;
           }
+          @include media(desktop){
           -ms-transform: translateY(-50%);
           transform: translateY(-40%);
           display: inline-block;
           margin-top: auto;
           height: 100%;
           margin-bottom: auto;
+          }
         }
         .has-dropdown {
           .dropdown {
             margin-top: $spacing-unit * 1.865 / 2;
             font-size: $base-font-size;
 
-            width: 180px;
+            @include media(desktop) {
+              width: 180px;
+            }
             li {
-              width: 100%;
+              @include media(desktop) {
+                width: 100%;
+              }
               padding: 8px;
               box-sizing: border-box;
               a {
@@ -59,15 +71,20 @@
             }
             background-color: $brand-color;
             padding: 0;
-            list-style-position: inside;
             margin-left: 0px;
             padding: 8px;
             display: none;
-            position: absolute;
+            @include media(desktop) {
+              position: absolute;
+              list-style-position: inside;
+            }
           }
           &:hover {
             .dropdown {
-              display: block;
+              display: inline;
+              @include media(desktop) {
+                display: block;
+              }
             }
           }
         }
@@ -76,46 +93,11 @@
   }
 }
 
-.side-nav {
-  background-color: $background-color;
-  color: #ffffffff;
-  width: 100%;
-  display: block;
-  position: absolute;
-  margin-top: $spacing-unit * 1.865;
-  margin-left: -$spacing-unit;
-  transition: transform 1s;
-  .has-dropdown {
-    .dropdown {
-      margin-top: $spacing-unit * 1.865 / 2;
-      font-size: $base-font-size;
-
-      li {
-        padding: 8px;
-        box-sizing: border-box;
-        a {
-          color: $background-color;
-        }
-        &:hover {
-          background-color: #ffffff4f;
-        }
-      }
-      background-color: $background-color;
-      padding: 0;
-
-      margin-left: 0px;
-      padding: 8px;
-      display: none;
-    }
-    &:hover {
-      .dropdown {
-        display: inline;
-      }
-    }
-  }
-}
 .sn-collapse {
   transform: translateY(-200%);
+  @include media(desktop){
+    transform: translateY(0);
+  }
 }
 .sn-expand {
   transform: translateY(0%);
@@ -129,6 +111,7 @@
     display: block;
     position: absolute;
   }
+  z-index: 9999;
 }
 .site-header-vignette {
   height: $spacing-unit * 1.865 * 3;
@@ -150,7 +133,8 @@
   label {
     display: block;
   }
-  input, textarea {
+  input,
+  textarea {
     width: 90%;
     display: block;
     padding: 8px;
@@ -190,6 +174,8 @@
   opacity: 0;
   transform-origin: top left;
   transition: opacity 1s, transform 1s;
+  pointer-events: none;
+  z-index:8888;
   @include media-max(mobile, tablet) {
     opacity: 1;
   }
@@ -216,6 +202,7 @@
   letter-spacing: -1px;
   position: absolute;
   margin: 0 0 0 (-$spacing-unit);
+  z-index: 9999;
   @include media-max(mobile, tablet) {
     margin: 0;
   }
@@ -423,6 +410,26 @@
 
 .post-list-heading {
   @include relative-font-size(1.75);
+}
+
+.programmes-item {
+  border: 1px solid black;
+  width: 100%;
+  padding: calc($spacing-unit / 2);
+  box-sizing: border-box;
+  .programme-image{
+    width: 100%;
+    height: 100px;
+    box-sizing: border-box;
+    background-size: cover;
+    background-position: center;
+    @include media(desktop){
+      width: 100px;
+      float: left;
+      border-radius: 50px;
+    }
+  }
+  
 }
 
 .post-list {

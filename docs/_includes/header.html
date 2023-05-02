@@ -1,83 +1,18 @@
 <header class="site-header" id="site-header" role="banner">
-  <div class="side-nav sn-collapse" role="navigation" id="side-nav">
-
-    <ul class="right">
-      {% for link in site.data.navigation %}
-
-      {% if link.url contains 'http' %}
-      {% assign domain = '' %}
-      {% assign _baseurl = '' %}
-      {% elsif link.url == '#' %}
-      {% assign domain = '' %}
-      {% assign _baseurl = site.baseurl %}
-      {% else %}
-      {% assign domain = site.url %}
-      {% assign _baseurl = site.baseurl %}
-      {% endif %}
-
-
-
-      {% comment %} If there are links for right side begin {% endcomment %}
-      {% if link.side == 'right' %}
-      {% comment %} If right side WITHOUT dropdown menu do {% endcomment %}
-      {% if link.dropdown == nil %}
-      <li class="divider"></li>
-      <li{% if link.url==page.url %} class="active" {% elsif page.homepage==true and link.url=='/' %} class="active" {%
-        endif %}>
-        <a {% if link.class %}class="{{link.class}}" {% endif %} href="{{ link.url }}"  {% if
-          link.url contains 'http' %} target="_blank" {% endif %}>{{ link.title | escape }}</a>
-        
-
-        {% comment %} If right side WITH dropdown menu do {% endcomment %}
-        {% else %}
-
-        <li class="divider"></li>
-        <li class="has-dropdown{% if link.url == page.url %} active{% endif %}">
-          <a {% if link.class %}class="{{link.class}}" {% endif %} href="{{ domain }}{{ _baseurl }}{{ link.url }}" {% if
-            link.url contains 'http' %} target="_blank" {% endif %}>{{ link.title | escape }}</a>
-
-          <ul class="dropdown">
-            {% for dropdown_link in link.dropdown %}
-
-            {% if dropdown_link.url contains 'http' %}
-            {% assign domain = '' %}
-            {% else %}
-            {% assign domain = site.url %}
-            {% endif %}
-
-            <li><a {% if dropdown_link.class %}class="{{dropdown_link.class}}" {% endif %}
-                href="{{ domain }}{{ _baseurl }}{{ dropdown_link.url }}" {% if dropdown_link.url contains 'http' %}
-                target="_blank" {% endif %}>{{ dropdown_link.title | escape }}</a></li>
-            {% endfor %}
-          </ul>
-
-        </li>
-        {% endif %}
-        {% endif %}
-        {% endfor %}
-        {% comment %} First loop finished 1 {% endcomment %}
-    </ul>
-  </div>
- 
-  <div class="site-header-background sh-expanded" id="site-header-background"></div>
  
   <div class="wrapper">
 
-    <div class="nav-button"><button id="nav-button"><i class="fa fa-bars"></i></button></div>
+   
     {%- assign default_paths = site.pages | map: "path" -%}
     {%- assign page_paths = site.header_pages | default: default_paths -%}
-    <div id="site-title" class="site-title-expanded site-title">
-      <a rel="author" href="{{ "/" | relative_url }}">
-        <img src="/assets/logo.png" alt=" {{ site.title | escape }}">
-      </a>
-    </div>
+   
 
+  
 
-
-
+    <div class="site-header-background sh-expanded" id="site-header-background"></div>
     <div class="top-nav " role="navigation" id="top-nav">
 
-      <ul class="right">
+      <ul class="right sn-collapse" id="right">
         {% for link in site.data.navigation %}
 
         {% if link.url contains 'http' %}
@@ -134,10 +69,15 @@
           {% comment %} First loop finished 1 {% endcomment %}
       </ul>
     </div>
+   
+    <div id="site-title" class="site-title-expanded site-title">
+      <a rel="author" href="{{ "/" | relative_url }}">
+        <img src="/assets/logo.png" alt=" {{ site.title | escape }}">
+      </a>
+    </div>
 
-
-
-
+    <div class="nav-button"><button id="nav-button"><i class="fa fa-bars"></i></button></div>
+    
   </div>
   
 </header>

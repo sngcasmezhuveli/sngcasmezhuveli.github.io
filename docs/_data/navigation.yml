@@ -8,8 +8,8 @@
   dropdown:
   - title: "Programmes Offered"
     url: "/academics/programmes_offered"
-  - title: "Fee Structure"
-    url: "/academics/fee_structure/"
+  - title: "Tuition Fees"
+    url: "/academics/tuition_fees/"
     
 - title: About Us
   url: "/about/"

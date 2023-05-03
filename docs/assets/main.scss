@@ -19,8 +19,8 @@
     height: 400px;
     background-image: url("/assets/college-mob.jpg");
   }
-  margin-left: calc($spacing-unit / -2);
-  margin-right: calc($spacing-unit / -2);
+  margin-left: $spacing-unit / -2;
+  margin-right: $spacing-unit / -2;
   @include media(desktop) {
     margin-left: -$spacing-unit;
     margin-right: -$spacing-unit;

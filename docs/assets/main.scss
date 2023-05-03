@@ -3,49 +3,96 @@
 ---
 
 @import "minima";
-
+* {
+  border: 1px soild red;
+}
 /**
 * home css
 */
 .head-carousel {
-    background-image: url("/assets/college.jpg");
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 600px;
-    @include media-max(mobile){
-      height: 400px;
-      background-image: url("/assets/college-mob.jpg");
-    }
-    margin-left: calc($spacing-unit / -2);
-    margin-right: calc($spacing-unit / -2);
-    @include media(desktop){
-      margin-left: -$spacing-unit;
-      margin-right: -$spacing-unit ;
-    }
+  background-image: url("/assets/college.jpg");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 600px;
+  @include media-max(mobile) {
+    height: 400px;
+    background-image: url("/assets/college-mob.jpg");
   }
-@keyframes marquee{
-    0% {transform: translateX(100%)}
-    100% {transform: translateX(-100%)}
+  margin-left: calc($spacing-unit / -2);
+  margin-right: calc($spacing-unit / -2);
+  @include media(desktop) {
+    margin-left: -$spacing-unit;
+    margin-right: -$spacing-unit;
   }
-  .marquee {
-    animation-name: marquee;
-    animation-duration: 20s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    &:hover {
-        animation-play-state: paused;
-      }
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
   }
-  .marquee-strip {
-    background-color: $brand-color-secondary;
-    padding: 2px 8px 2px 8px;
-    color: white;
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.marquee {
+  animation-name: marquee;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+.marquee-strip {
+  background-color: $brand-color-secondary;
+  padding: 2px 8px 2px 8px;
+  color: white;
   overflow-x: hidden;
-    margin-left: calc( $spacing-unit / -2);
-    margin-right: calc( $spacing-unit / -2);
-    @include media(desktop){
-      margin-left: -$spacing-unit;
-      margin-right: -$spacing-unit ;
+  margin-left: calc($spacing-unit / -2);
+  margin-right: calc($spacing-unit / -2);
+  @include media(desktop) {
+    margin-left: -$spacing-unit;
+    margin-right: -$spacing-unit;
+  }
+}
+.container {
+  
+
+  .people-grid{
+    display: grid;
+    column-gap: 8px;
+    row-gap: 8px;
+    grid: auto-flow;
+   
+  > .key-person {
+    @include media(desktop) {
+      width: 100%;
+      margin: calc($spacing-unit / 4);
+      grid-row: 1/1;
+    }
+    height: 300px;
+    background-size: cover;
+    background-position: center top;
+    position: relative;
+    .person-info{
+      position: absolute;
+      display: block;
+      bottom: 0px;
+      width: 100%;
+      padding: 8px;
+      background-color: rgba(0, 0, 0, 0.63);
+    
+      color: $background-color;
+      box-sizing: border-box;
+      h3,h4{
+        margin: 2px;
+      }
+      h3{
+        font-weight: 700;
+      }
     }
   }
+  
+}
+
+}

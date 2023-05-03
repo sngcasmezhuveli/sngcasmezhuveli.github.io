@@ -19,8 +19,8 @@
     height: 400px;
     background-image: url("/assets/college-mob.jpg");
   }
-  margin-left: $spacing-unit / -2;
-  margin-right: $spacing-unit / -2;
+  margin-left: calc(#{$spacing-unit} / -2);
+  margin-right: calc(#{$spacing-unit} / -2);
   @include media(desktop) {
     margin-left: -$spacing-unit;
     margin-right: -$spacing-unit;
@@ -48,8 +48,8 @@
   padding: 2px 8px 2px 8px;
   color: white;
   overflow-x: hidden;
-  margin-left: $spacing-unit / -2;
-  margin-right: $spacing-unit / -2;
+  margin-left: calc(#{$spacing-unit} / -2);
+  margin-right: calc(#{$spacing-unit} / -2);
   @include media(desktop) {
     margin-left: -$spacing-unit;
     margin-right: -$spacing-unit;
@@ -67,7 +67,7 @@
   > .key-person {
     @include media(desktop) {
       width: 100%;
-      margin: $spacing-unit / 4;
+      margin: calc(#{$spacing-unit} / 4);
       grid-row: 1/1;
     }
     height: 300px;
@@ -97,4 +97,3 @@
 
 
 }
-

@@ -25,8 +25,8 @@
         font-size: $nav-font-size;
         width: 100%;
         margin-top: $spacing-unit * 1.865;
-        margin-left: calc($spacing-unit / -2);
-        margin-right: calc($spacing-unit / -2);
+        margin-left: calc(#{$spacing-unit} / -2);
+        margin-right: calc(#{$spacing-unit} / -2);
         @include media(desktop) {
           margin-left: -$spacing-unit;
           margin-right: -$spacing-unit;
@@ -56,7 +56,7 @@
               box-sizing: border-box;
               height: 100%;
               width: 100%;
-              padding: calc($spacing-unit / 3);
+              padding: calc(#{$spacing-unit} / 3);
             }
           }
 
@@ -109,7 +109,7 @@
                 box-sizing: border-box;
                 height: 100%;
                 width: 100%;
-                padding: calc($spacing-unit / 3);
+                padding:calc(#{$spacing-unit} / 3);
               }
               &:hover {
                 background-color: #ffffff4f;
@@ -518,7 +518,7 @@
 .programmes-item {
   border: 1px solid black;
   width: 100%;
-  padding: calc($spacing-unit / 2);
+  padding: calc(#{$spacing-unit} / 2);
   box-sizing: border-box;
   .programme-image {
     width: 100%;
@@ -559,8 +559,8 @@
 .post-header {
   margin-bottom: $spacing-unit;
   box-sizing: border-box;
-  margin-left: calc($spacing-unit / -2);
-  margin-right: calc($spacing-unit / -2);
+  margin-left: calc(#{$spacing-unit} / -2);
+  margin-right: calc(#{$spacing-unit} / -2);
   @include media(desktop) {
     margin-left: -$spacing-unit;
     margin-right: -$spacing-unit;

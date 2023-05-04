@@ -36,7 +36,11 @@
             {%- endif -%}
           </li>-->
           {%- if site.phone -%}
-          <li><i class="fa fa-phone"></i> <a class="u-phone" href="tel:{{ site.phone }}">{{ site.phone }}</a></li>
+          <li><i class="fa fa-phone"></i> <a class="u-phone" href="tel:{{ site.phone }}">{{ site.phone }}</a>
+            {%- if site.phone -%}
+            , <a class="u-phone" href="tel:{{ site.phone-secondary }}">{{ site.phone-secondary }}</a>
+            {%- endif -%}
+          </li>
           {%- endif -%}
           {%- if site.email -%}
           <li><i class="fa fa-envelope"></i> <a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>

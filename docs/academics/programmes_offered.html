@@ -6,6 +6,7 @@ type: sub
 parent: Academics
 image: /assets/prg-ofrd.jpg
 ---
+<div class="programmes-container">
 {% for programme in site.data.programmes %}
 <div class="programmes-item">
     <div class="programme-image" style="background-image: url('{{ programme.image }}');"></div>
@@ -17,3 +18,4 @@ image: /assets/prg-ofrd.jpg
     </div>
 </div>
 {% endfor %}
+</div>

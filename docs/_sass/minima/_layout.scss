@@ -168,12 +168,13 @@
             &[type="checkbox"] {
               cursor: pointer;
               // float: right;
-              top: 12px;
+              top: 10px;
               height: 100%;
-              right: $spacing-unit;
+              right: calc(#{$spacing-unit} / 3);
               display: inline-block;
               position: absolute;
               @include media(desktop) {
+                top: 16px;
                 right: unset;
                 display: inline;
                 position: relative;
@@ -183,7 +184,7 @@
               -webkit-appearance: none;
               appearance: none;
               &::before {
-                font-family: "FontAwesome";
+                font-family: "Material Icons Round";
                 color: $background-color;
                 @include media(desktop) {
                 color: $brand-color;
@@ -191,14 +192,14 @@
                 font-weight: 600;
                 font-size: $base-font-size * 1.1;
 
-                content: "\f105";
+                content: "\e5cc";
                 @include media(desktop) {
-                  content: "\f107";
+                  content: "\e5cf";
                 }
               }
               &:checked {
                 &::before {
-                  content: "\f107";
+                  content: "\e5cf";
                 }
                 + .dropdown {
                   @include media-max(mobile, tablet) {
@@ -263,8 +264,16 @@
     height: 100%;
     background-color: $brand-color;
     border: none;
+    position: relative;
     i{
       color: $background-color;
+    }
+    #menu-close-icon{
+      display: none
+    }
+    #menu-icon{
+      display: block;
+      
     }
   }
   z-index: 9999;
@@ -452,14 +461,27 @@
   margin-left: 0;
   > li {
     display: table;
-
+    
     > i {
       display: table-cell;
       padding: 8px;
+      font-size: $base-font-size;
       text-align: center;
+      vertical-align: middle;
+      &.for-multiline{
+        padding-top:10px;
+        vertical-align: top;
+      }
     }
     > span {
       display: table-cell;
+      vertical-align: middle;
+      padding: 8px 0 8px 0;
+    }
+    > a{
+      padding: 8px 0 8px 0;
+      font-size: $base-font-size;
+      
     }
   }
 }

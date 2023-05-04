@@ -45,10 +45,16 @@ document.addEventListener("scroll", function () {
 document.addEventListener("DOMContentLoaded", function () {
   $("nav-button").addEventListener("click", function () {
     let sideNav = $("right");
+    let menuIcon = $("menu-icon")
+    let menuCloseIcon = $("menu-close-icon")
     if (sideNav.className == "right sn-expand") {
       sideNav.className = "right sn-collapse";
+      menuIcon.style.display = "block"
+      menuCloseIcon.style.display = "none"
     } else {
       sideNav.className = "right sn-expand";
+      menuIcon.style.display = "none"
+      menuCloseIcon.style.display = "block"
     }
   });
 });

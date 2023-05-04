@@ -326,6 +326,7 @@
   z-index: 9999;
   @include media-max(mobile, tablet) {
     margin: 0;
+    left: 0;
   }
   transform-origin: top left;
   transition: transform 1s;

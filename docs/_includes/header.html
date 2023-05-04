@@ -38,7 +38,7 @@
         <li{% if link.url==page.url %} class="active" {% elsif page.homepage==true and link.url=='/' %} class="active"
           {% endif %}><a {% if link.class %}class="{{link.class}}" {% endif %}
             href="{{ domain }}{{ _baseurl }}{{ link.url }}" {% if link.url contains 'http' %} target="_blank" {% endif
-            %}>{{ link.title | escape }}</a></li>
+            %}><span>{{ link.title | escape }}</span></a></li>
 
           {% comment %} If right side WITH dropdown menu do {% endcomment %}
           {% else %}
@@ -47,7 +47,7 @@
         <li class="divider"></li>
         {% endif %}
           <li class="has-dropdown{% if link.url == page.url %} active{% endif %}">
-            <label for="{{ link.title | escape }}">{{link.title | escape }}</label><input type="checkbox" id="{{ link.title }}">
+            <label for="{{ link.title | escape }}"><span>{{ link.title | escape }}</span></label><input type="checkbox" id="{{ link.title }}">
             <ul class="dropdown">
               {% for dropdown_link in link.dropdown %}
 

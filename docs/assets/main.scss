@@ -97,3 +97,61 @@
 
 
 }
+
+.contact-form {
+  border: 1px soild red;
+  width: 40%;
+  @include media-max(mobile) {
+    width: 80%;
+  }
+  label {
+    display: block;
+  }
+  input,
+  textarea {
+    width: 90%;
+    display: block;
+    padding: 8px;
+    margin: 0 0 $spacing-unit 0;
+
+    &[type="submit"] {
+      background-color: $brand-color;
+      color: $background-color;
+      outline: none;
+      border: none;
+      border-radius: 5px;
+      width: fit-content;
+    }
+  }
+}
+
+
+
+.google-map {
+  width: 50%;
+  @include media-max(mobile) {
+    width: 100%;
+  }
+}
+
+
+
+.programmes-item {
+  border: 1px solid black;
+  width: 100%;
+  padding: calc(#{$spacing-unit} / 2);
+  box-sizing: border-box;
+  .programme-image {
+    width: 100%;
+    height: 100px;
+    box-sizing: border-box;
+    background-size: cover;
+    background-position: center;
+    @include media(desktop) {
+      width: 100px;
+      float: left;
+      border-radius: 50px;
+    }
+  }
+}
+

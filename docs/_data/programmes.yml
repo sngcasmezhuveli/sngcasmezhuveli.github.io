@@ -1,17 +1,20 @@
 - title: B.Com Computer Applications
   url: /academics/b-com-computer/
   description: BCom Computer Applications is a 3-year undergraduate course. It is designed to have an understanding in the field of commerce, especially in the discipline that involves the use of software technology application.
-  fees-per-semester: "11,000"
+  fees-per-semester: "11,250"
+  seats: 60
   image: /assets/com-appl.jpg
 
 - title: B.Com. Co-operation
   url: /academics/b-com-co-op
   description: With a number of MNCs setting up their offices in the rural sector of India, the course helps the candidates improve the understanding of management in the co-operative economic model.
   fees-per-semester: "9,000"
+  seats: 60
   image: /assets/co-op.jpg
 
 - title: B.A. Sociology
   url: /academics/ba-sociology/
   description: BA Sociology is a 3 year undergradaute course that deals with the study of society like social interaction, social satisfaction, social relations etc.
   fees-per-semester: "9,000"
+  seats: 60
   image: /assets/sociology.jpg

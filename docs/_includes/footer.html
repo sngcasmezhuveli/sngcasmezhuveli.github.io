@@ -7,7 +7,7 @@
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
         <h3>Quick Links</h3>
-        <ul>
+        <ul class="quicklinks">
           {% for link in site.data.quicklinks %}
 
           {% if link.url contains 'http' %}
@@ -21,7 +21,7 @@
           {% assign _baseurl = site.baseurl %}
           {% endif %}
 
-          <li class="quicklink"><a href="{{ link.url }}">{{ link.title }}</a></li>
+          <li><a href="{{ link.url }}">{{ link.title }}</a></li>
           {% endfor %}
         </ul>
       </div>
@@ -67,8 +67,11 @@
       </div>
 
       <div class="footer-col footer-col-3">
+        <!--
         <h3>Engage</h3>
         {%- include social.html -%}
+           -->
+        <img src="/assets/logo.png">
       </div>
 
 

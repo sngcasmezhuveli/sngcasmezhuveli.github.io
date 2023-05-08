@@ -13,8 +13,9 @@ image: /assets/prg-ofrd.jpg
     <div class="programme-dets">
         <h3 class="programme-title">{{ programme.title }}</h3>
         <div class="programme-description">{{ programme.description }}</div>
+        <div class="programme-seats">Seats: {{ programme.seats }}</div>
         <div class="programme-fees">Fees: ₹{{ programme.fees-per-semester }} per Semester</div>
-        <a href="{{ programme.url }}">Learn More</a>
+        <!--<a href="{{ programme.url }}">Learn More</a>-->
     </div>
 </div>
 {% endfor %}

@@ -9,13 +9,14 @@
 $base-font-family: 'Outfit', sans-serif;
 //$head-font-family:  'Josefin Sans', sans-serif;
 
-$base-font-size:   16px !default;
+$base-font-size:   18px !default;
 $base-font-weight: 300 !default;
 $small-font-size:  $base-font-size * 0.875 !default;
 $large-font-size:  $base-font-size * 2 !default;
 $x-large-font-size:  $base-font-size * 4 !default;
-$base-line-height: 1.5 !default;
-$nav-font-size: $base-font-size * 1.2 !default;
+$base-line-height: 2 !default;
+$narrow-line-height: 1.5;
+$nav-font-size: $base-font-size * 1.1 !default;
 $nav-font-weight: 700 !default;
 
 
@@ -83,22 +84,6 @@ $breakpoints-max: (
       @content
     } 
   }
-}
-
-@mixin for-phone-only {
-  @media (max-width: 599px) { @content; }
-}
-@mixin for-tablet-portrait-up {
-  @media (min-width: 600px) { @content; }
-}
-@mixin for-tablet-landscape-up {
-  @media (min-width: 900px) { @content; }
-}
-@mixin for-desktop-up {
-  @media (min-width: 1200px) { @content; }
-}
-@mixin for-big-desktop-up {
-  @media (min-width: 1800px) { @content; }
 }
 
 @mixin relative-font-size($ratio) {

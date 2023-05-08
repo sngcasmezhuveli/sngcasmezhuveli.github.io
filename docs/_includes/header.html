@@ -26,9 +26,11 @@
         {% assign _baseurl = site.baseurl %}
         {% endif %}
 
+{% comment %} 
+ {{ domain }}{{ _baseurl }}{{ link.url }}
+{% endcomment %}
 
-
-        {% comment %} If there are links for right side begin {% endcomment %}
+{% comment %} If there are links for right side begin {% endcomment %}
         {% if link.side == 'right' %}
         {% comment %} If right side WITHOUT dropdown menu do {% endcomment %}
         {% if link.dropdown == nil %}
@@ -37,7 +39,7 @@
         {% endif %}
         <li{% if link.url==page.url %} class="active" {% elsif page.homepage==true and link.url=='/' %} class="active"
           {% endif %}><a {% if link.class %}class="{{link.class}}" {% endif %}
-            href="{{ domain }}{{ _baseurl }}{{ link.url }}" {% if link.url contains 'http' %} target="_blank" {% endif
+            href="{{ link.url }}" {% if link.url contains 'http' %} target="_blank" {% endif
             %}><span>{{ link.title | escape }}</span></a></li>
 
           {% comment %} If right side WITH dropdown menu do {% endcomment %}
@@ -61,7 +63,7 @@
               {% endif %}
               
               <li><a {% if dropdown_link.class %}class="{{dropdown_link.class}}" {% endif %}
-                  href="{{ domain }}{{ _baseurl }}{{ dropdown_link.url }}" {% if dropdown_link.url contains 'http' %}
+                  href="{{ dropdown_link.url }}" {% if dropdown_link.url contains 'http' %}
                   target="_blank" {% endif %}>{{ dropdown_link.title | escape }}</a></li>
               {% endfor %}
             </ul>

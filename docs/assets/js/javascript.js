@@ -60,8 +60,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let contactForm = $('contact-form');
   if(contactForm){
-    contactForm.addEventListener("submit", function (e) {
-      e.prevenDefault();
+    
+    contactForm.addEventListener("submit", function(e) {
+      e.preventDefault();
       Email.send({
         SecureToken : "ce13e120-37e5-4916-8bc5-4c0ac9a9ec70",
         To : 'lafleurvioletblog@gmail.com',

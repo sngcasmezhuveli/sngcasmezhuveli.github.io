@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
     contactForm.addEventListener("submit", function (e) {
       Email.send({
         SecureToken : "ce13e120-37e5-4916-8bc5-4c0ac9a9ec70",
-        To : 'enquiries@sngcasmezhuveli.in',
+        To : 'lafleurvioletblog@gmail.com',
         From : "sngcasmcf@gmail.com",
         Subject : "Quick query",
         Body : "And this is the body"

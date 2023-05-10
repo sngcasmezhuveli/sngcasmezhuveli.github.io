@@ -64,10 +64,9 @@ image: /assets/contact-us.jpg
         <label>Your E-mail id</label>
         <input type="email" required id="sender-email">
         <label>Your Phone</label>
-        <div class="prefixed-input" ><span>+91</span><input type="number" required id="sender-phone"></div>
+        <div class="prefixed-input" ><span>+91</span><input type="tel" required id="sender-phone" pattern="[0-9]{10}"></div>
         <label>Your Message</label>
-        <textarea id="query-message" name="query-message" rows="10" cols="50" required>
-    </textarea>
-        <button type="submit">Send Message</button>
+        <textarea id="query-message" name="query-message" rows="10" cols="50" required></textarea>
+        <button type="submit"><i class="material-icons-round">send</i>Send Message</button>
     </form>
 </div>

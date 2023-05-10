@@ -16,6 +16,9 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
   <script type="text/javascript" src="{{ "/assets/js/javascript.js" | relative_url }}"></script>
+  {% if page.url.contains "/contact" %}
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  {% endif %}
   <style>
     .material-symbols-rounded {
       font-variation-settings:

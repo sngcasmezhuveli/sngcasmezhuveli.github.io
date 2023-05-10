@@ -29,7 +29,7 @@
     margin-right: -$spacing-unit;
   }
 }
-@keyframes marquee {
+@keyframes marquee-anim {
   0% {
     transform: translateX(100%);
   }
@@ -38,12 +38,15 @@
   }
 }
 .marquee {
-  animation-name: marquee;
+  animation-name: marquee-anim;
   animation-duration: 20s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   &:hover {
     animation-play-state: paused;
+  }
+  a{
+    color: $background-color;
   }
 }
 .marquee-section {

@@ -63,12 +63,17 @@ document.addEventListener("DOMContentLoaded", function () {
     
     contactForm.addEventListener("submit", function(e) {
       e.preventDefault();
+      let senderName, senderEmail, senderPhone, queryMessage;
+      senderName = $("sender-name").value
+      senderEmail = $("sender-email").value
+      senderPhone = $("sender-phone").value
+      queryMessage = $("query-message").value
       Email.send({
         SecureToken : "ce13e120-37e5-4916-8bc5-4c0ac9a9ec70",
         To : 'lafleurvioletblog@gmail.com',
         From : "sngcasmcf@gmail.com",
         Subject : "Quick query",
-        Body : "And this is the body"
+        Body : "New query received.<br /> sender: "+senderName + "<br /> email: <a href=\"mailto:"+senderEmail+"\">"+senderEmail+"</a> <br /> Phone: "+senderPhone + "<br /> message: <br /> "+ queryMessage + "<br /> <i>NB: Please do not reply to this email. Only reply to the sender.</i>"
     }).then(
       message => alert(message)
     );

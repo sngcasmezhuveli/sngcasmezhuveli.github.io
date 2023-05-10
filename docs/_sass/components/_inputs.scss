@@ -1,0 +1,44 @@
+input,
+  textarea {
+    width: 100%;
+    display: block;
+    padding: 8px;
+    margin: 0 0 $spacing-unit 0;
+    box-sizing: border-box;
+    resize: vertical;
+    font-size: $base-font-size;
+    &[type="submit"] {
+      background-color: $brand-color;
+      color: $background-color;
+      outline: none;
+      border: none;
+      border-radius: 5px;
+      width: fit-content;
+    }
+  }
+.prefixed-input{
+    display: block;
+    position: relative;
+input{
+    display: inline;
+    padding-left: $base-font-size * 2;
+}
+span{
+   
+    display: block;
+    padding: 2px 0 0 8px;
+    left: 0;
+    position: absolute;
+    color: $grey-color;
+}/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+}

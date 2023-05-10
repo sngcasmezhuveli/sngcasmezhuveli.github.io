@@ -288,23 +288,7 @@
   label {
     display: block;
   }
-  input,
-  textarea {
-    width: 100%;
-    display: block;
-    padding: 8px;
-    margin: 0 0 $spacing-unit 0;
-    box-sizing: border-box;
-    resize: vertical;
-    &[type="submit"] {
-      background-color: $brand-color;
-      color: $background-color;
-      outline: none;
-      border: none;
-      border-radius: 5px;
-      width: fit-content;
-    }
-  }
+  
 }
 
 .google-map {

@@ -68,15 +68,15 @@ document.addEventListener("DOMContentLoaded", function () {
       senderEmail = $("sender-email").value
       senderPhone = $("sender-phone").value
       queryMessage = $("query-message").value
-      /*Email.send({
+      Email.send({
         SecureToken : "ce13e120-37e5-4916-8bc5-4c0ac9a9ec70",
         To : 'lafleurvioletblog@gmail.com',
         From : "sngcasmcf@gmail.com",
         Subject : "Quick query",
         Body : "New query received.<br /> sender: "+senderName + "<br /> email: <a href=\"mailto:"+senderEmail+"\">"+senderEmail+"</a> <br /> Phone: "+senderPhone + "<br /> message: <br /> "+ queryMessage + "<br /> <i>NB: Please do not reply to this email. Only reply to the sender.</i>"
     }).then(
-      message => alert(message)
-    );*/
+      //message => alert(message)
+    );
       
     })
   }

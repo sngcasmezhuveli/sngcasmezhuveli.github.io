@@ -66,10 +66,5 @@ defaults:
     values:
       album: true
 
-defaults:
-  - scope:
-      path: ""
-    values:
-      image: /assets/images/og-card.jpg
 sass:
   style: compressed

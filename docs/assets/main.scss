@@ -13,14 +13,21 @@
   text-align: center;
 }
 .head-carousel {
-  background-image: url("/assets/college.jpg");
+  position: relative;
+  overflow: hidden;
+  // background-image: url("/assets/images/college-mob.jpg");
   background-position: top;
+  @include media(desktop) {
+    // background-image: url("/assets/images/college.jpg");
+    background-position: center;
+  }
+
   background-repeat: no-repeat;
   background-size: cover;
   height: 600px;
   @include media-max(mobile) {
     height: 400px;
-    background-image: url("/assets/college-mob.jpg");
+    //background-image: url("/assets/images/college-mob.jpg");
   }
   margin-left: calc(#{$spacing-unit} / -2);
   margin-right: calc(#{$spacing-unit} / -2);
@@ -28,24 +35,43 @@
     margin-left: -$spacing-unit;
     margin-right: -$spacing-unit;
   }
+  img {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 50%;
+    transform: translateY(-48%);
+  }
+  h2 {
+    display: block;
+    position: absolute;
+    bottom: $spacing-unit;
+    left: $spacing-unit;
+  }
 }
 @keyframes marquee-anim {
   0% {
-    transform: translateX(100%);
+    transform: translateX(0%);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-150%);
   }
 }
 .marquee {
+  left: 100%;
+  position: relative;
   animation-name: marquee-anim;
-  animation-duration: 20s;
+  animation-duration: 30s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+  
+    width: fit-content;
+  
   &:hover {
     animation-play-state: paused;
   }
-  a{
+  a {
     color: $background-color;
   }
 }
@@ -75,11 +101,13 @@
   text-align: center;
 }
 .marquee-container {
+  @include media(tablet, desktop){
   width: fit-content;
   display: grid;
   grid: auto-flow;
   margin-left: auto;
   margin-right: auto;
+  }
 }
 
 .marquee-strip {
@@ -97,10 +125,12 @@
   }
 }
 .marquee-title {
-  padding: 8px;
+  @include media(tablet, desktop){
   width: fit-content;
   grid-row: 1/1;
   grid-column: 1/2;
+  }
+  padding: 8px;
   background-color: $brand-color-secondary;
   color: $background-color;
 }
@@ -119,18 +149,46 @@
   }
 }
 .features-section {
+  position: relative;
   background-color: $brand-color;
-  margin-left: calc(#{$spacing-unit} / -2);
-  margin-right: calc(#{$spacing-unit} / -2);
-  @include media(desktop) {
-    margin-left: -$spacing-unit;
-    margin-right: -$spacing-unit;
-  }
+  margin: $spacing-unit calc(#{$spacing-unit} / -2) $spacing-unit
+    calc(#{$spacing-unit} / -2);
+
   padding: $spacing-unit;
   color: $background-color;
   text-align: center;
+  overflow: hidden;
+  //background-image: url("/assets/images/sree-narayanaguru-college-of-advanced-studies-ground-floor-corridor.jpg");
+  //background-size: cover;
+  // background-position: center;
+  //background-blend-mode: multiply;
   @include media(desktop) {
+    margin-left: -$spacing-unit;
+    margin-right: -$spacing-unit;
+
     text-align: unset;
+  }
+  a,
+  h2 {
+    position: relative;
+  }
+  > img {
+    display: inline;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    opacity: 0.1;
+    max-width: unset;
+    height: 100%;
+    width: auto;
+    transform: translateX(-60%);
+    @include media(desktop) {
+      left: 0;
+      top: 50%;
+      width: 100%;
+      height: auto;
+      transform: translateY(-50%);
+    }
   }
   h2 {
     text-transform: uppercase;
@@ -139,9 +197,11 @@
   }
 
   .feature-grid {
+    position: relative;
     display: table;
     width: 100%;
-    grid: auto-flow;
+    table-layout: fixed;
+    padding: 0 0 $spacing-unit 0;
     > div {
       display: table-row;
       > div {
@@ -154,6 +214,13 @@
           display: block;
           font-size: $x-large-font-size;
           font-weight: 200;
+        }
+        img {
+          display: block;
+          width: $x-large-font-size;
+          height: $x-large-font-size;
+          margin-left: auto;
+          margin-right: auto;
         }
       }
     }
@@ -267,7 +334,7 @@
     text-align: center;
     height: 300px;
     border: 1px solid black;
-    padding: calc(#{$spacing-unit} / 2);
+    padding: calc(#{$spacing-unit} / 2) 0 calc(#{$spacing-unit} / 2) 0;
     a,
     i {
       display: block;
@@ -288,37 +355,45 @@
   label {
     display: block;
   }
-  
 }
-
-.google-map {
-  width: 50%;
-  @include media-max(mobile) {
-    width: 100%;
-  }
-}
-
 .programmes-container {
-  display: grid;
-  column-gap: 8px;
-  row-gap: 8px;
-  grid: auto-flow;
+  margin-top: calc(#{$spacing-unit} * 2);
+  margin-bottom: calc(#{$spacing-unit} * 2);
+
   @include media(desktop) {
-    grid-auto-columns: minmax(0, 1fr);
-    grid-auto-flow: column;
+    margin: 0 calc(#{$spacing-unit} * 3);
   }
+  ul {
+    list-style: unset;
+  }
+}
+
+.programmes-grid {
+  display: grid;
+  column-gap: calc(#{$spacing-unit} / 2);
+  row-gap: calc(#{$spacing-unit} / 2);
+  grid-auto-columns: minmax(0, 1fr);
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(min(100%, max(300px, 100%/4)), 1fr)
+  );
+  grid: auto-flow;
 }
 
 .programmes-item {
+  position: relative;
+
   @include media(desktop) {
+    min-width: 300px;
     width: 100%;
     margin: calc(#{$spacing-unit} / 4);
-    grid-row: 1/1;
     box-sizing: border-box;
+    height: 500px;
   }
-  border: 1px solid black;
+
+  box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.164);
   width: 100%;
-  padding: calc(#{$spacing-unit} / 2);
+
   box-sizing: border-box;
   .programme-image {
     width: 100%;
@@ -327,17 +402,634 @@
     background-size: cover;
     background-position: center;
   }
+  .programme-dets {
+    padding: calc(#{$spacing-unit} / 2);
+  }
+  .programme-data {
+    display: flex;
+    @include media(desktop) {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+    width: auto;
+    div {
+      padding: 8px;
+    }
+    .programme-seats {
+      background-color: $brand-color-secondary;
+      color: $background-color;
+      width: 35%;
+    }
+    .programme-fees {
+      background-color: $brand-color;
+      color: $background-color;
+      width: 65%;
+    }
+  }
 }
 
 .about-container {
   margin-top: calc(#{$spacing-unit} * 2);
   margin-bottom: calc(#{$spacing-unit} * 2);
-  
+
   @include media(desktop) {
-  margin: calc(#{$spacing-unit} * 3);
+    margin: 0 calc(#{$spacing-unit} * 3);
+  }
+  ul {
+    list-style: unset;
+  }
+}
+
+.form-alert {
+  &.inactive {
+    opacity: 0;
+  }
+  &.processing {
+    color: $text-color;
+  }
+  &.success {
+    color: $ok-color;
+  }
+  &.error {
+    color: $error-color;
+  }
+}
+
+.grid-post-head {
+  font-family: "Outfit", sans-serif;
+  //  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.grid-post-image {
+  width: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 200px;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 100ms;
+  }
+  @include media(desktop) {
+    height: 200px;
+  }
+}
+.gallery-container {
+  @include media(desktop) {
+    margin: 0 calc(#{$spacing-unit} * 3);
+  }
+}
+.post-list {
+  display: grid;
+  column-gap: calc(#{$spacing-unit} / 2);
+  row-gap: calc(#{$spacing-unit} / 2);
+  grid-auto-columns: minmax(0, 1fr);
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(min(100%, max(300px, 100%/4)), 1fr)
+  );
+  grid: auto-flow;
+  > li {
+    a {
+      overflow: hidden;
+    }
+    margin-left: 0;
+    margin-right: 0;
+    background-color: $brand-color;
+    padding-bottom: $spacing-unit;
+    p {
+      span::before {
+        color: $background-color;
+        display: inline-block;
+        font-family: "Material Icons Round";
+        content: "\e5c8";
+        transition: transform 100ms;
+        font-weight: 600;
+        height: 100%;
+        vertical-align: bottom;
+      }
+    }
+    @include media(desktop) {
+      vertical-align: text-top;
+      height: fit-content;
+      overflow: hidden;
+      position: relative;
+      transform: translateY(0);
+      transition: transform 100ms;
+
+      &:hover {
+        a {
+          p {
+            > span::before {
+              transform: translateX(100%);
+            }
+          }
+        }
+        .grid-post-image {
+          img {
+            //  transform: scale(1.1);
+            transition: transform 100ms;
+          }
+        }
+      }
+    }
+    p {
+      margin: 0;
+      padding: 4px $spacing-unit;
+      &.sub-text {
+        font-size: $base-font-size * 0.8;
+      }
+    }
+    a {
+      color: $background-color;
+      text-decoration: none;
+    }
+  }
+}
+
+.album-grid {
+  display: grid;
+  column-gap: calc(#{$spacing-unit} / 2);
+  row-gap: calc(#{$spacing-unit} / 2);
+  grid-auto-columns: minmax(0, 1fr);
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(min(100%, max(64px, 100%/7)), 1fr)
+  );
+  grid: auto-flow;
+  .album-image-container {
+    background-color: $grey-color;
+    overflow: hidden;
+    vertical-align: middle;
+    aspect-ratio: 1;
+    &:hover {
+      img {
+        transform: scale(1.2);
+      }
+    }
+    img {
+      cursor: pointer;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 300ms;
+    }
+  }
+}
+
+.page-header-image {
+  &.contact {
+    background-image: url("/assets/images/contact-mob.jpg");
+    @include media(tablet) {
+      background-image: url("/assets/images/contact-tab.jpg");
+    }
+    @include media(desktop) {
+      background-image: url("/assets/images/contact.jpg");
+    }
+  }
+  &.gallery {
+    background-image: url("/assets/images/gallery-mob.jpg");
+    @include media(tablet) {
+      background-image: url("/assets/images/gallery-tab.jpg");
+    }
+    @include media(desktop) {
+      background-image: url("/assets/images/gallery.jpg");
+    }
+  }
+  &.programmes {
+    background-image: url("/assets/images/programmes-mob.jpg");
+    @include media(tablet) {
+      background-image: url("/assets/images/programmes-tab.jpg");
+    }
+    @include media(desktop) {
+      background-image: url("/assets/images/programmes.jpg");
+    }
+  }
+  &.about {
+    background-image: url("/assets/images/about-mob.jpg");
+    @include media(tablet) {
+      background-image: url("/assets/images/about-tab.jpg");
+    }
+    @include media(desktop) {
+      background-image: url("/assets/images/about.jpg");
+    }
+  }
+  &.fees {
+    background-image: url("/assets/images/fees-mob.jpg");
+    @include media(tablet) {
+      background-image: url("/assets/images/fees-tab.jpg");
+    }
+    @include media(desktop) {
+      background-image: url("/assets/images/fees.jpg");
+    }
+  }
+  &.error404 {
+    background-image: url("/assets/images/error404-mob.jpg");
+    @include media(tablet) {
+      background-image: url("/assets/images/error404-tab.jpg");
+    }
+    @include media(desktop) {
+      background-image: url("/assets/images/error404.jpg");
+    }
+  }
+  &.album {
+    background-image: url("/assets/images/album-mob.jpg");
+    @include media(tablet) {
+      background-image: url("/assets/images/album-tab.jpg");
+    }
+    @include media(desktop) {
+      background-image: url("/assets/images/album.jpg");
+    }
+  }
+  &.facilities {
+    background-image: url("/assets/images/facilities-mob.jpg");
+    @include media(tablet) {
+      background-image: url("/assets/images/facilities-tab.jpg");
+    }
+    @include media(desktop) {
+      background-image: url("/assets/images/facilities.jpg");
+    }
+  }
+  &.results {
+    background-image: url("/assets/images/results-mob.jpg");
+    @include media(tablet) {
+      background-image: url("/assets/images/results-tab.jpg");
+    }
+    @include media(desktop) {
+      background-image: url("/assets/images/results.jpg");
+    }
+  }
+}
+
+.pic-text-block {
+  @include media(desktop) {
+    position: static;
+
+    div {
+      position: relative;
+      display: block;
+      min-height: 400px;
+      div {
+        display: block;
+        position: absolute;
+        width: 60%;
+      }
+    }
+
+    > :nth-child(odd) {
+      figure {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 80%;
+        width: auto;
+        img {
+          height: 100%;
+          width: auto;
+        }
+      }
+      div {
+        right: 0;
+        top: 0;
+      }
+    }
+
+    > :nth-child(even) {
+      figure {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 80%;
+        width: auto;
+        margin-top: auto;
+        margin-bottom: auto;
+        img {
+          height: 100%;
+          width: auto;
+        }
+      }
+      div {
+        left: 0;
+        top: 0;
+      }
+    }
+  }
+}
+
+.mission-and-vision {
+  display: table;
+  background-color: $brand-color;
+  color: $background-color;
+  margin-left: calc(#{$spacing-unit} / -2);
+  margin-right: calc(#{$spacing-unit} / -2);
+
+  padding: calc(#{$spacing-unit} / 2);
+  @include media(desktop) {
+    margin-left: -$spacing-unit * 4;
+    margin-right: -$spacing-unit * 4;
+  }
+  > div {
+    display: table-row;
+
+    > div {
+      display: block;
+      // text-align: center;
+      @include media-max(mobile) {
+        ul {
+          // list-style: none;
+          // list-style-position: inside;
+          padding: 0;
+          //  margin: 0;
+          li {
+            //  padding: $spacing-unit 0 $spacing-unit 0;
+          }
+        }
+      }
+      @include media(desktop) {
+        display: table-cell;
+        padding: $spacing-unit;
+        text-align: left;
+      }
+      img {
+        display: block;
+        width: $x-large-font-size;
+        height: $x-large-font-size;
+        //  margin-left: auto;
+        //  margin-right: auto;
+        margin-top: $spacing-unit;
+        @include media(desktop) {
+          margin: 0;
+        }
+      }
+    }
+    .vision {
+      @include media(desktop) {
+        width: 40%;
+        padding-left: $spacing-unit * 4;
+      }
+    }
+
+    .mission {
+      @include media(desktop) {
+        padding-right: $spacing-unit * 4;
+      }
+    }
+    .divider {
+      height: 2px;
+      padding: 0;
+      background-color: $background-color;
+      @include media(desktop) {
+        height: auto;
+        width: 2px;
+      }
+    }
+  }
+}
+
+#college-entrance-image {
+  @include media(desktop) {
+    width: 500px;
+    height: auto;
+    float: right;
+    margin-left: $spacing-unit;
+  }
+}
+
+.campus-content {
+  @include media(desktop) {
+    text-align: justify;
+  }
+}
+
+.principal {
+  figure {
+    figcaption {
+      text-align: center;
+    }
+    @include media(desktop) {
+      float: left;
+      margin: $base-font-size $spacing-unit 0 0;
+      img {
+        width: 400px;
+        height: auto;
+      }
+      figcaption {
+        font-size: $base-font-size * 1.3;
+        text-align: left;
+      }
+    }
+  }
+}
+
+.principal-excerpt {
+  margin-top: $spacing-unit;
+  position: relative;
+
+  min-height: 500px;
+  text-align: center;
+  @include media(desktop) {
+    text-align: left;
+  }
+  > img {
+    @include media(desktop) {
+      position: absolute;
+      display: block;
+      left: 0;
+      height: auto;
+      width: 48%;
+    }
+  }
+  > div {
+    text-align: center;
+    @include media(desktop) {
+      text-align: left;
+      position: absolute;
+      display: block;
+      right: 0;
+      height: auto;
+      width: 48%;
+    }
+
+    .quote {
+      font-size: $base-font-size * 1.2;
+      text-align: justify;
+      @include media(desktop) {
+        text-align: left;
+        font-size: $base-font-size * 1.5;
+      }
+    }
+    .attribution {
+      font-size: $base-font-size * 0.8;
+      //  text-align: left;
+      @include media(desktop) {
+        font-size: $base-font-size;
+      }
+    }
+    img {
+      @include media-max(mobile) {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      display: block;
+      width: $x-large-font-size;
+    }
+  }
+}
+
+.campus-content {
+  margin-top: calc(#{$spacing-unit} * 2);
+  margin-bottom: calc(#{$spacing-unit} * 2);
+
+  @include media(desktop) {
+    margin: 0 calc(#{$spacing-unit} * 3);
+  }
+  ul {
+    list-style: unset;
+  }
+}
+
+.visit-directions {
+  @include media(desktop) {
+    display: flex;
+  }
+  div {
+    @include media(desktop) {
+      margin: 1%;
+      display: inline-block;
+      width: 46%;
+      height: 100%;
+    }
+
+    iframe {
+      width: 100%;
+    }
+  }
+}
+
+.quick-query {
+  @include media(desktop) {
+    text-align: center;
+  }
+  padding: $spacing-unit 0 $spacing-unit 0;
+  form {
+    margin-left: auto;
+    margin-right: auto;
+    label {
+      text-align: left;
+    }
+  }
+}
+
+.facility-cards-container {
+  display: grid;
+  column-gap: 8px;
+  row-gap: 8px;
+  grid: auto-flow;
+  @include media(desktop) {
+    grid-auto-columns: minmax(0, 1fr);
+
+    column-gap: $spacing-unit;
+  }
+
+  .row1 {
+    @include media(desktop) {
+      grid-row: 1/2;
+    }
+  }
+  .row2 {
+    @include media(desktop) {
+      grid-row: 2/2;
+    }
+  }
+}
+
+.external-link {
+  content: "\e89e";
+  font-family: "Material Icons Round", sans-serif;
+  color: $background-color;
+  font-weight: 600;
+}
+
+.card {
+  @include media(desktop) {
+    width: 100%;
+    margin: calc(#{$spacing-unit} / 4);
+  }
+
+  box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.164);
+  width: 100%;
+
+  box-sizing: border-box;
+
+  figure {
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    background-size: cover;
+    background-position: center;
+  }
+
+  > div,
+  p,
+  h1,
+  h2,
+  h3 {
+    padding: calc(#{$spacing-unit} / 2);
+  }
+}
+
+.admission {
+  > div {
+    margin-left: auto;
+    margin-right: auto;
+    @include media(desktop) {
+      width: 90%;
+    display: flex;
+    }
+    div {
   
-} 
- ul {
+      margin-bottom: $spacing-unit;
+      text-align: center;
+      padding: $spacing-unit calc(#{$spacing-unit} /2 );
+    }
+  }
+}
+
+.news-container{
+  margin-top: calc(#{$spacing-unit} * 2);
+  margin-bottom: calc(#{$spacing-unit} * 2);
+
+  @include media(desktop) {
+    margin: 0 calc(#{$spacing-unit} * 3);
+  }
+  ul {
+    list-style: unset;
+  }
+}
+
+.table-container{
+  margin-top: calc(#{$spacing-unit} * 2);
+  margin-bottom: calc(#{$spacing-unit} * 2);
+
+  @include media(desktop) {
+    margin: 0 calc(#{$spacing-unit} * 3);
+  }
+  ul {
     list-style: unset;
   }
 }

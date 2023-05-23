@@ -23,6 +23,8 @@ $nav-font-weight: 700 !default;
 $spacing-unit:     30px !default;
 
 $text-color:       #111 !default;
+$ok-color: #1fb91f !default;
+$error-color: #ca1c1c !default;
 $background-color: #fdfdfd !default;
 $brand-color:      #385396 !default;
 $brand-color-secondary:      #38734a !default;
@@ -47,8 +49,8 @@ $topbar-divider-border-top: solid 0px scale-color($brand-color, $lightness: -50%
 // Use media queries like this:
 // @include media-query($on-palm) {
 //   .wrapper {
-//     padding-right: $spacing-unit / 2;
-//     padding-left: $spacing-unit / 2;
+//     padding-right: calc(#{$spacing-unit} / 2);
+//     padding-left: calc(#{$spacing-unit} / 2);
 //   }
 // }
 @mixin media-query($device) {

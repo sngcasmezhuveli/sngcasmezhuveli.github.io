@@ -1,14 +1,14 @@
 ---
 layout: default
+title: Home
+image: "/assets/images/sree-narayanaguru-college-of-advanced-studies-mezhuveli.jpg"
 ---
 
 <div class="home">
-  {%- if page.title -%}
-  <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
 
   <div class="head-carousel">
-   
+   <img src="/assets/images/sree-narayanaguru-college-of-advanced-studies-mezhuveli.jpg" alt="Frontal view of Sree Narayanaguru College of Advanced Studies Mezhuveli Pathanamthitta">
+
   </div>
   {% if site.data.updates %}
   <div class="marquee-section">
@@ -28,33 +28,49 @@ layout: default
 
   <div>
     <div class="welcome">
-      {{ site.data.updates.size }}
-      <h2>Welcome to SNGCAS, Mezhuveli</h2>
+      <h1>Welcome to SNGCAS, Mezhuveli</h1>
       <p>Learn in a supportive environment where students can attain comprehensive growth and build lifelong connections. We, ever since our inception, have been doing our utmost to ensure that we enable each one of our students to play a dynamic role in the nation building process and the advancement of humanity.</p>
   
     </div>
+    <div>
     <div class="features-section">
+      <img src="/assets/images/sree-narayanaguru-college-of-advanced-studies-ground-floor-corridor.jpg" width="1920" height="1440" alt="">
       <h2>Unique Features</h2>
       <div class="feature-grid">
         <div>
-          <div><i class="material-symbols-rounded">nature</i> Tranquil Atmosphere</div>
+          <div><img src="/assets/images/tranquil_atmosphere.svg" alt="">Tranquil Atmosphere</div>
 
 
-          <div><i class="material-symbols-rounded">co_present</i> Supportive Professors</div>
+          <div><img src="/assets/images/professors.svg" alt="">Supportive Professors</div>
 
 
-          <div><i class="material-symbols-rounded">auto_meeting_room</i> Ample Facilities</div>
+          <div><img src="/assets/images/facilities.svg" alt=""> Ample Facilities</div>
         </div>
         <div>
 
-          <div><i class="material-symbols-rounded">school</i> Excellent Results</div>
+          <div><img src="/assets/images/graduate.svg" alt=""> Excellent Results</div>
 
 
-          <div><i class="material-symbols-rounded">metabolism</i> Comprehensive Education</div>
+          <div><img src="/assets/images/overall.svg" alt=""> Comprehensive Education</div>
 
 
-          <div><i class="material-symbols-rounded">visibility</i> No Additional Fees</div>
+          <div><img src="/assets/images/visible.svg" alt=""> No Additional Fees</div>
         </div>
+      </div>
+      <a href="/college/campus" class="button-link inverted">More About Our Campus</a>
+    </div>
+    <div class="container">
+      <h2>Prinicipal's Message</h2>
+      <div class="principal-excerpt">
+        
+      <img src="/assets/images/principal.jpg" alt="Prof. Maloor Muraleedharan, Principal of Sree Narayanaguru College of Advanced Studies, Mezhuveli">
+      
+      <div>
+        <img src="/assets/images/quote.svg" alt="quote">
+        <p class="quote">... Our unwavering dedication lies in offering our students an extensive range of prospects, enabling them to realize their utmost capabilities ...</p>
+        <p class="attribution">- Prof. Maloor Muraleedharan</p>
+        <a href="/college/about#principal" class="button-link">Read the Full Message</a>
+      </div>
       </div>
     </div>
     <!--
@@ -86,8 +102,29 @@ layout: default
     <div>
 
     </div>
+
+
+    <div class="container">
+      <h2>Latest Photos</h2>
+      <ul class="post-list">
+        {% assign albums = site.gallery | sort: 'date' | reverse %}
+        {% for post in albums %}
+        {% if forloop.index <= 3 %}  <li class="card">
+            <a href="{{ post.url }}">
+                <div class="grid-post-image"><img  src="/assets/gallery/uploads/{{post.album_id}}/cover.jpg" alt=""></div>
+                <p class="grid-post-head">{{ post.title }}</p>
+                <p class="sub-text">{{ post.date | date: "%-d %B %Y" }}</p>
+                <p>View Photos <span></span> </p>
+            </a>
+            </li>
+            {% endif %}
+            {% endfor %}
+    </ul>
+    <a class="button-link" href="/gallery">Browse All Photos</a>
+    </div>
+    
   </div>
-  {{ content }}
+  
   <!--
   {%- if site.posts.size > 0 -%}
   <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>

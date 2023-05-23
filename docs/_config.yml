@@ -25,22 +25,19 @@ phone-secondary: +91 8848439201
 address1: Sree Narayana Guru College of Advanced Studies
 locality: Mezhuveli, Pathanamthitta
 state: Kerala
-pin: 689645
+pin: 689507
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Sree Narayana Guru College of Advanced Studies, Mezhuveli, is a centre of excellence in higher learning affiliated to the Mahatma Gandhi University, Kottayam.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-facebook_username: snmezhuveli
-instagram_username:  snmezhuveli
-youtube_username: snmezhuveli
+url: "https://www.sngcasmezhuveli.in" # the base hostname & protocol for your site, e.g. http://example.com
+facebook_username: sngcasmezhuveli
+instagram_username: sngcasmezhuveli
+#youtube_username: snmezhuveli
 
 # Build settings
 theme: minima
 plugins:
   - jekyll-feed
-
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
@@ -60,3 +57,19 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+collections:
+   gallery:
+    output: true
+defaults:
+  - scope:
+      path: "assets/gallery/uploads"
+    values:
+      album: true
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/images/og-card.jpg
+sass:
+  style: compressed

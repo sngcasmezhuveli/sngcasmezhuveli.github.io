@@ -15,7 +15,7 @@ image: "/assets/images/sree-narayanaguru-college-of-advanced-studies-mezhuveli.j
     <div class="marquee-container">
       <div class="marquee-title">Latest Updates</div>
       <div class="marquee-strip">
-        <div class="marquee">
+        <div class="marquee" id="marquee">
           
           {% for update in site.data.updates %}
           <a href="{{ update.url }}">&#8226; {{ update.content }}</a>

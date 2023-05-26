@@ -5,7 +5,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#385396" />
+  {% if page.layout == "home" %}
+  <title>{{ site.title }}</title>
+  {% seo title=false %}
+  {% else %}
   {%- seo -%}
+  {% endif %}
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
 
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">

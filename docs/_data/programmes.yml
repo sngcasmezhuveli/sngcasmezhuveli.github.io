@@ -4,6 +4,7 @@
   fees-per-semester: "11,250"
   seats: 60
   image: /assets/images/com-appl.jpg
+  id: b-com-ca
 
 - title: B.Com. Co-operation
   url: /academics/b-com-co-op
@@ -11,6 +12,7 @@
   fees-per-semester: "9,000"
   seats: 60
   image: /assets/images/co-op.jpg
+  id: b-com-co-op
 
 - title: B.A. Sociology
   url: /academics/ba-sociology
@@ -18,3 +20,4 @@
   fees-per-semester: "9,000"
   seats: 60
   image: /assets/images/sociology.jpg
+  id: ba-soc

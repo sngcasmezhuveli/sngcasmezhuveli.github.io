@@ -52,7 +52,7 @@
        
           <li>
             <i class="material-icons-round for-multiline">place</i> 
-            <span>
+            <div class="multiline-text">
            {{ site.address1 }}
             {%- if site.locality -%}
             <div> {{ site.locality }}</div>
@@ -60,7 +60,7 @@
             {%- if site.state -%}
             <div>{{ site.state }},&nbsp; {%- if site.pin -%} {{ site.pin }} {%- endif -%}</div>
             {%- endif -%}
-            </span>
+            </div>
           </li>
           {%- endif -%}
         </ul>

@@ -1,0 +1,74 @@
+@import "variables";
+
+@font-face {
+  font-family: '#{$icomoon-font-family}';
+  src:
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?ka68w0') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?ka68w0') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?ka68w0##{$icomoon-font-family}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="ic-"], [class*=" ic-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '#{$icomoon-font-family}' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ic-location {
+  &:before {
+    content: $ic-location; 
+  }
+}
+.ic-email {
+  &:before {
+    content: $ic-email; 
+  }
+}
+.ic-website {
+  &:before {
+    content: $ic-website; 
+  }
+}
+.ic-arrow-right {
+  &:before {
+    content: $ic-arrow-right; 
+  }
+}
+.ic-arrowhead-left {
+  &:before {
+    content: $ic-arrowhead-left; 
+  }
+}
+.ic-arrowhead-down {
+  &:before {
+    content: $ic-arrowhead-down; 
+  }
+}
+.ic-instagram {
+  &:before {
+    content: $ic-instagram; 
+  }
+}
+.ic-facebook {
+  &:before {
+    content: $ic-facebook; 
+  }
+}
+.ic-phone {
+  &:before {
+    content: $ic-phone; 
+  }
+}
+

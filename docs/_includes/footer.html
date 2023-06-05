@@ -36,7 +36,7 @@
             {%- endif -%}
           </li>-->
           {%- if site.phone -%}
-          <li><i class="material-icons-round">call</i>
+          <li><i class="ic-phone"></i>
             <span><a class="u-phone" href="tel:{{ site.phone }}">{{ site.phone }}</a>
             {%- if site.phone -%}
             , <a class="u-phone" href="tel:{{ site.phone-secondary }}">{{ site.phone-secondary }}</a>
@@ -45,13 +45,13 @@
           </li>
           {%- endif -%}
           {%- if site.email -%}
-          <li><i class="material-icons-round">email</i> <span> <a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a> </span></li>
+          <li><i class="ic-email"></i> <span> <a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a> </span></li>
           {%- endif -%}
        
           {%- if site.address1 -%}
        
           <li>
-            <i class="material-icons-round for-multiline">place</i> 
+            <i class="ic-location for-multiline"></i> 
             <div class="multiline-text">
            {{ site.address1 }}
             {%- if site.locality -%}

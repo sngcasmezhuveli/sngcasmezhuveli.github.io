@@ -239,7 +239,7 @@
               -webkit-appearance: none;
               appearance: none;
               &::before {
-                font-family: "Material Icons Round";
+                font-family: "SNGCAS-M-Material";
                 color: $background-color;
                 @include media(desktop) {
                 color: $brand-color;
@@ -247,14 +247,14 @@
                 font-weight: 600;
                 font-size: $base-font-size * 1.1;
 
-                content: "\e5cc";
+                content: "\e904";
                 @include media(desktop) {
-                  content: "\e5cf";
+                  content: "\e905";
                 }
               }
               &:checked {
                 &::before {
-                  content: "\e5cf";
+                  content: "\e905";
                 }
                 + .dropdown {
                   @include media-max(mobile, tablet) {

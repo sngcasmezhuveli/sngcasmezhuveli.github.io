@@ -36,6 +36,9 @@ button,
   outline: none;
   border: 1px solid $brand-color;
   cursor: pointer;
+  i{
+    font-size: $base-font-size * 1.2;
+  }
   &[type="submit"] {
     line-height: $base-line-height;
     vertical-align: middle;

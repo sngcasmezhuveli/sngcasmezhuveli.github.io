@@ -3,9 +3,9 @@
 @font-face {
   font-family: '#{$icomoon-font-family}';
   src:
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?er44z8') format('truetype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?er44z8') format('woff'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?er44z8##{$icomoon-font-family}') format('svg');
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?mzm3ik') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?mzm3ik') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?mzm3ik##{$icomoon-font-family}') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -26,6 +26,41 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.ic-arrow-left {
+  &:before {
+    content: $ic-arrow-left; 
+  }
+}
+.ic-navigate-next {
+  &:before {
+    content: $ic-navigate-next; 
+  }
+}
+.ic-navigate-before {
+  &:before {
+    content: $ic-navigate-before; 
+  }
+}
+.ic-reset-to-screen {
+  &:before {
+    content: $ic-reset-to-screen; 
+  }
+}
+.ic-zoom-out {
+  &:before {
+    content: $ic-zoom-out; 
+  }
+}
+.ic-zoom-in {
+  &:before {
+    content: $ic-zoom-in; 
+  }
+}
+.ic-send {
+  &:before {
+    content: $ic-send; 
+  }
+}
 .ic-close {
   &:before {
     content: $ic-close; 
@@ -81,3 +116,4 @@
     content: $ic-phone; 
   }
 }
+
